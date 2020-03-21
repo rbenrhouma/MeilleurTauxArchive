@@ -1,11 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Header from "./components/Head";
+import ProgressBar from "./components/ProgressBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Header></Header>
+      <ProgressBar pourcentage={5} />
+      <Footer />
     </div>
   );
 }

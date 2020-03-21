@@ -1,0 +1,26 @@
+.pagination #btPagiNext {
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 8px 30px;
+}
+
+.pagination #btPagiPrev {
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 8px 30px;
+}
+
+.pagination #btPagiNext:hover {
+  color: #ff9600;
+  background-color: #fff;
+}
+
+.pagination {
+  padding: 10px 15px 2px;
+}
+
+.pagination a {
+  display: block;
+  font-size: 16px;
+  padding: 10px 0;
+}
