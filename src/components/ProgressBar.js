@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 const ProgressBar = props => {
   const { pourcentage } = props;
+  let position = -425 + pourcentage * 8;
   return (
-    <div class="progress-bar">
-      <div id="pagiContent">
-        <div id="pagiStep">
-          {pourcentage}
-          <span>%</span>
-        </div>
-        <div id="pagiAvancement"></div>
+    <>
+      <div class="progress-bar">
+        <span class="pourcent" style={{ left: position + "px" }}>
+          {pourcentage}%
+        </span>
       </div>
-    </div>
+    </>
   );
 };
 export default ProgressBar;

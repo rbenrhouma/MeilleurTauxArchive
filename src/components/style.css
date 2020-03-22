@@ -1,13 +1,24 @@
+.header {
+  background-color: #ff9600;
+  height: 80px;
+}
+.progress-bar {
+  background-color: rgb(240, 240, 240);
+  width: 815px;
+  height: 5px;
+}
 .pagination #btPagiNext {
   font-size: 16px;
   font-size: 1.6rem;
   padding: 8px 30px;
+  cursor: pointer;
 }
 
 .pagination #btPagiPrev {
   font-size: 16px;
   font-size: 1.6rem;
   padding: 8px 30px;
+  cursor: pointer;
 }
 
 .pagination #btPagiNext:hover {
@@ -16,6 +27,10 @@
 }
 
 .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(17, 184, 255);
   padding: 10px 15px 2px;
 }
 
@@ -23,4 +38,30 @@
   display: block;
   font-size: 16px;
   padding: 10px 0;
+}
+.body {
+  background-color: rgba(193, 175, 85, 0.852);
+  height: 500px;
+}
+
+span.pourcent {
+  position: relative;
+  top: -20px;
+  background: rgba(255, 149, 0, 0.68);
+  border-radius: 25px;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 50px;
+  width: 50px;
+  text-align: center;
+  border-width: 7px;
+  border-color: #2b00ff;
+}
+.radioButton {
+  background-color: #ff9600;
+  border-color: #2b00ff;
+  border-width: 10px;
+  width: 100px;
+  height: 100px;
 }
