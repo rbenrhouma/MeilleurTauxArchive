@@ -1,29 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
-import { RadioGroup, RadioButton } from "react-radio-buttons";
+import BouttonRadio from "./BouttonRadio";
 
-const RadioGroupX = props => {
-  const setGender = event => {
-    // console.log(event.target.value);
-    // alert(event.target.value);
+const RadioGroup = props => {
+  const { InterfaceData } = props;
+  const [selectedItem, setSelectedItem] = useState(0);
+
+  const onSelectItem = e => {
+    const idx = e.target.getAttribute("index") * 1;
+    setSelectedItem(idx);
   };
+
+  useEffect(() => {}, [selectedItem]);
+
   return (
-    // <div onChange={setGender}>
-    //   <input className="radioButton" type="radio" value="M" name="type_bien" />
-    //   MAISON
-    //   <input className="radioButton" type="radio" value="A" name="type_bien" />
-    //   APPARTEMENY
-    // </div>
     <>
-      <RadioGroup onChange={setGender} horizontal>
-        <RadioButton backgroudColor="black" disabledColor = "blue" pointColor="red" rootColor="blue" value="M">
-          MAISON
-        </RadioButton>
-        <RadioButton value="A">APPARTEMENT</RadioButton>
-        {/* <RadioButton value="melon">Melon</RadioButton> */}
-        {/* <ReversedRadioButton value="melon">Melon</ReversedRadioButton> */}
-      </RadioGroup>
+      <div className="radioGroup">
+        {InterfaceData &&
+          InterfaceData.map((radioBtn, index) => {
+            return (
+              index > 0 && (
+                <BouttonRadio
+                  key={index}
+                  index={index}
+                  selectedItem={selectedItem}
+                  caption={radioBtn.caption}
+                  onSelect={onSelectItem}
+                ></BouttonRadio>
+              )
+            );
+          })}
+      </div>
     </>
   );
 };
-export default RadioGroupX;
+export default RadioGroup;

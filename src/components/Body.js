@@ -1,14 +1,24 @@
 import React from "react";
+import RadioGroup from "./RadioGroup";
+import DataPages from "../constantes/InterfaceData";
+import Title from "./Title";
+import GoodLocalisation from "./GoodLocalisation";
+import GoodCost from "./GoodCost";
+import ContactDetails from "./ContactDetails";
 import "./style.css";
-import RadioGroupX from "./RadioGroup";
 
 const Body = props => {
   const { pageIndex } = props;
+  const data = DataPages[pageIndex - 1];
   return (
     <>
-      <div class="body" id="body_form">
+      <Title title={data[0].title}></Title>
+      <div className="body" id="body_form">
         <div>{pageIndex}</div>
-        <RadioGroupX />
+        {pageIndex < 5 && <RadioGroup InterfaceData={data} />}
+        {pageIndex === 5 && <GoodLocalisation />}
+        {pageIndex === 6 && <GoodCost />}
+        {pageIndex === 7 && <ContactDetails />}
       </div>
     </>
   );
