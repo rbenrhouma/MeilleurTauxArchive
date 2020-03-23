@@ -9,17 +9,21 @@ const Footer = props => {
   return (
     <>
       <div className="pagination" id="btn_form">
-        {pageInex > 1 && pageInex < maxPage && (
-          <a className="prev btPrev btPagiPriorNext" onClick={onPriorPage}>
-            <span>Précédent</span>
-          </a>
-        )}
+        <div className="btnContainer">
+          {pageInex > 1 && pageInex < maxPage && (
+            <a className="prev btPrev " onClick={onPriorPage}>
+              <span>Précédent</span>
+            </a>
+          )}
+        </div>
         {pageInex < maxPage && <ProgressBar pourcentage={props.progression} />}
-        {pageInex < maxPage && (
-          <a className="next btNext btPagiPriorNext" onClick={onNextPage}>
-            <span>{pageInex === maxPage - 1 ? "Valider" : "Suivant"}</span>
-          </a>
-        )}
+        <div className="btnContainer">
+          {pageInex < maxPage && (
+            <a className="next btNext " onClick={onNextPage}>
+              <span>{pageInex === maxPage - 1 ? "VALIDER" : "SUIVANT"}</span>
+            </a>
+          )}
+        </div>
       </div>
     </>
   );

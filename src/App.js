@@ -8,14 +8,22 @@ import "./App.css";
 function App() {
   const [indexPage, setIndexPage] = useState(1);
   const [progression, setProgression] = useState(0);
+  let cookies = new Cookies();
 
-  let initialStore = {
-    page1: 0,
-    page2: 0
+  var initialStore = {
+    pageIndex: -1
+  };
+
+  const initilizeCookies = () => {
+    initialStore.pageIndex = -1;
   };
 
   useEffect(() => {
-    setProgression(indexPage * 12);
+    setProgression(indexPage * 13);
+    if (indexPage < 8) initialStore.pageIndex = indexPage;
+    else initilizeCookies();
+    cookies.set("myState", initialStore, { path: "/" });
+    console.log(cookies.get("myState"));
   }, [indexPage]);
 
   const nextPage = () => {
@@ -25,9 +33,8 @@ function App() {
     setIndexPage(indexPage - 1);
   };
 
-  const cookies = new Cookies();
-  cookies.set("myState", initialStore, { path: "/" });
-  console.log(cookies.get("myState"));
+  //cookies.set("myState", initialStore, { path: "/" });
+  //console.log(cookies.get("myState"));
 
   return (
     <div className="App">

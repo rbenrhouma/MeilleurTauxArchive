@@ -1,5 +1,5 @@
 import React from "react";
-import NumericInput from "react-numeric-input";
+
 
 import "./style.css";
 

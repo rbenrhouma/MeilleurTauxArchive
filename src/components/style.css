@@ -23,23 +23,24 @@
   width: 815px;
   height: 5px;
 }
-.btPagiPriorNext {
-  font-size: 16px;
-  font-size: 1.6rem;
-  padding: 8px 30px;
-  cursor: pointer;
+
+.pagination .btnContainer {
+  width: 300px;
+  height: 30px;
 }
 
 .pagination .btNext {
   color: #ffffff;
   background-color: #ff9600;
-  width: 100px;
+  width: 200px;
+  height: 30px;
   border-radius: 30px;
 }
 
 .pagination .btNext:hover {
   color: #ff9600;
   background-color: #fff;
+  height: 24px;
   border-width: 3px;
   border-color: #ff9600;
   border-style: solid;
@@ -49,8 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(17, 184, 255);
-  padding: 10px 15px 2px;
+  padding: 20px;
 }
 
 .pagination a {
@@ -62,20 +62,24 @@
   background-color: rgba(193, 175, 85, 0.852);
   height: 300px;
 }
-
+.pourcent_bar {
+  position: relative;
+  left: 0;
+  background: #f5e0b7;
+  height: 100%;
+}
 span.pourcent {
   position: relative;
-  top: -18px;
-  background: rgba(255, 149, 0, 0.68);
-  border-radius: 20px;
+  top: -20px;
+  background: #ff9500;
+  border-radius: 50%;
   color: #ffffff;
   display: inline-block;
   font-weight: bold;
   line-height: 40px;
   width: 40px;
   text-align: center;
-  border-width: 7px;
-  border-color: #2b00ff;
+  border: #f5e0b7 solid 3px;
 }
 
 .goodLocalisation {
@@ -85,7 +89,8 @@ span.pourcent {
 /* ---------------------------  RadioGroup ----------------------------------------*/
 .radioGroup {
   display: flex;
-  width: 80%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .btnRadio {
