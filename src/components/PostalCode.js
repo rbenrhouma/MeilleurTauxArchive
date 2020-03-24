@@ -13,7 +13,7 @@ export default function PostalCode() {
     // });
   }, [postalCodes]);
 
-  const onTagsChange = (event, values) => {};
+  //const onTagsChange = (event, values) => {};
 
   const fetchPostalCode = (e, v) => {
     if (e) {

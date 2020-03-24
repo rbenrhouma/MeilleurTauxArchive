@@ -9,7 +9,7 @@ const MentionsLegales = props => {
   return (
     <div>
       <a onClick={onMentionsLegalClick}>
-        <div>
+        <div className="mentionsLegalesTitle" >
           <span>* Champ obligatoire - </span>
           <span className="mentionsLegales">Mentions Légales</span>
         </div>

@@ -59,7 +59,7 @@
   padding: 10px 0;
 }
 .body {
-  height: 300px;
+  height: 400px;
 }
 .pourcent_bar {
   position: relative;
@@ -123,10 +123,13 @@ span.pourcent {
   border: #ff6200 solid 2px;
 }
 
+.mentionsLegalesTitle {
+  text-align: left;
+  margin: 20px;
+}
 .mentionsLegales {
   font-size: medium;
   text-decoration: underline #ff9500;
-  /*  text-decoration: underline; */
 }
 
 .mentionsLegalesText {
@@ -136,7 +139,6 @@ span.pourcent {
 .radioBtn {
   width: 5%;
   height: 1.3em;
-
 }
 /* .btnRadioUnselected :hover {
   background-color: #ff9600;

@@ -13,8 +13,6 @@
     "react-autocomplete": "^1.8.1",
     "react-cookie": "^4.0.3",
     "react-dom": "^16.13.1",
-    "react-numeric-input": "^2.2.3",
-    "react-radio-buttons": "^1.2.2",
     "react-scripts": "3.4.0",
     "react-tooltip": "^4.1.2",
     "vicopo": "^1.2.1"
