@@ -1,13 +1,13 @@
-.numericInputBar {
+.mtInputBar {
   height: 75px;
   margin: 10px;
   display: flex;
   flex-direction: row;
 }
-.numericInputBarOdd {
+.mtInputBarOdd {
   background-color: #f1f1f1;
 }
-.numericCaption {
+.mtCaption {
   margin-left: 50px;
   width: 30%;
   font-size: x-large;
@@ -15,7 +15,7 @@
   margin-top: 20px;
   text-align: left;
 }
-.numericInfo {
+.mtInfo {
   display: flex;
   height: 30px;
   width: 30px;
@@ -29,14 +29,15 @@
   justify-content: center;
 }
 
-.numericInfo:hover {
+.mtInfo:hover {
   box-shadow: 3px 3px #464646;
   cursor: pointer;
 }
 
-.NumericInput {
+.mtInput {
   width: 380px;
   height: 56px;
+  padding-left: 20px;
   font-size: xx-large;
   font-weight: bold;
   border: #ebb360 solid 1px;
@@ -45,7 +46,7 @@
   margin-top: 8px;
 }
 
-.numericCurrency {
+.mtCurrency {
   font-size: xx-large;
   margin-top: 18px;
   margin-left: 10px;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MtNumericInputBar from "./MT/MtNumericInputBar";
+import MTInputBar from "./MT/MTInputBar";
 
 import "./style.css";
 
@@ -14,44 +14,54 @@ const GoodCost = props => {
   const [notaire, setNotaire] = useState(0);
   const [total, setTotal] = useState(0);
 
+  const formatedNumber = num => {
+    return num; //.toLocaleString();
+  };
+
   useEffect(() => {
-    setNotaire(montant * 1.8);
-    setTotal(montant * 1 + travaux * 1 + notaire * 1);
+    setNotaire(formatedNumber((montant * 0.18).toFixed(0)));
+    setTotal(formatedNumber(montant * 1 + travaux * 1 + notaire * 1));
   }, [montant, travaux]);
+
   function handleChange(e) {
     if (e.target.name === Fmontant) setMontant(e.target.value);
     else if (e.target.name === Ftravaux) setTravaux(e.target.value);
   }
+
   return (
     <div className="goodCost">
-      <MtNumericInputBar
+      <MTInputBar
         name={Fmontant}
         handleChange={handleChange}
         value={montant}
+        type={"number"}
         odd={true}
         caption={"Montant estimé de votre aquisition *"}
         txtInfo={"bla bla bla 11111111..."}
       />
-      <MtNumericInputBar
+      <MTInputBar
         name={Ftravaux}
         handleChange={handleChange}
         value={travaux}
+        type={"number"}
         odd={false}
         caption={"Montant estimé des travaux"}
         txtInfo={"bla bla bla 22222222..."}
       />
-      <MtNumericInputBar
+      <MTInputBar
         name={Fnotaire}
         handleChange={handleChange}
         value={notaire}
+        type={"number"}
         odd={true}
         caption={"Frais de notaire *"}
         txtInfo={"bla bla bla 3333333..."}
       />
-      <MtNumericInputBar
+      <MTInputBar
         name={Ftotal}
         handleChange={handleChange}
         value={total}
+        type={"number"}
         odd={false}
         caption={"Budjet total estimé du projet"}
         txtInfo={"bla bla bla 444444 ..."}

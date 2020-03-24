@@ -9,8 +9,9 @@ import TheEnd from "./TheEnd";
 import "./style.css";
 
 const Body = props => {
-  const { pageIndex } = props;
+  const { pageIndex, checkFormValide } = props;
   const data = DataPages[pageIndex - 1];
+
   return (
     <>
       {data && <Title title={`${data[0].title}  - (${pageIndex})`}> </Title>}
@@ -18,7 +19,9 @@ const Body = props => {
         {pageIndex < 5 && <RadioGroup InterfaceData={data} />}
         {pageIndex === 5 && <GoodLocalisation />}
         {pageIndex === 6 && <GoodCost />}
-        {pageIndex === 7 && <ContactDetails />}
+        {pageIndex === 7 && (
+          <ContactDetails checkFormValide={checkFormValide} />
+        )}
         {pageIndex === 8 && <TheEnd numDossier={"00000000000000"} />}
       </div>
     </>

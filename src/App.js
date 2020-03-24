@@ -13,13 +13,14 @@ function App() {
     cookies.get("myState") ? cookies.get("myState").pageIndex : 1
   );
   const [progression, setProgression] = useState(0);
+  const [currentFormIsValid, setCurrentFormIsValid] = useState(false);
 
   let initialStore = {
-    pageIndex: -1
+    pageIndex: 1
   };
 
   const initilizeCookies = () => {
-    initialStore.pageIndex = -1;
+    initialStore.pageIndex = 1;
   };
 
   useEffect(() => {
@@ -37,19 +38,23 @@ function App() {
     setIndexPage(indexPage - 1);
   };
 
-  //cookies.set("myState", initialStore, { path: "/" });
-  //console.log(cookies.get("myState"));
-
+  const checkFormValide = valid => {
+    setCurrentFormIsValid(valid);
+    console.log("-------------");
+    console.log(currentFormIsValid);
+    console.log("-------------");
+  };
   return (
     <div className="App">
       <Header></Header>
 
-      <Body pageIndex={indexPage} />
+      <Body pageIndex={indexPage} checkFormValide={checkFormValide} />
       <Footer
         pageInex={indexPage}
         progression={progression}
         onPriorPage={priorPage}
         onNextPage={nextPage}
+        currentFormIsValid={currentFormIsValid}
       ></Footer>
       <MentionsLegales></MentionsLegales>
     </div>
