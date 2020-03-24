@@ -3,9 +3,8 @@ import "./style.css";
 import ProgressBar from "./ProgressBar";
 
 const Footer = props => {
-  const { onNextPage, onPriorPage, pageInex } = props;
+  const { onNextPage, onPriorPage, pageInex, currentFormIsValid } = props;
   const maxPage = 8;
-
   return (
     <>
       <div className="pagination" id="btn_form">
@@ -19,7 +18,12 @@ const Footer = props => {
         {pageInex < maxPage && <ProgressBar pourcentage={props.progression} />}
         <div className="btnContainer">
           {pageInex < maxPage && (
-            <a className="next btNext " onClick={onNextPage}>
+            <a
+              className={
+                currentFormIsValid ? "next btNext" : "next btNextDisabled"
+              }
+              onClick={onNextPage}
+            >
               <span>{pageInex === maxPage - 1 ? "VALIDER" : "SUIVANT"}</span>
             </a>
           )}

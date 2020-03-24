@@ -37,6 +37,14 @@
   border-radius: 30px;
 }
 
+.pagination .btNextDisabled {
+  color: #ffffff;
+  background-color: #9b9b9b;
+  width: 200px;
+  height: 30px;
+  border-radius: 30px;
+}
+
 .pagination .btNext:hover {
   color: #ff9600;
   background-color: #fff;
