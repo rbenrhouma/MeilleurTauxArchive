@@ -10,7 +10,7 @@
 }
 
 .title {
-  font-family: "Oswald", sans-serif;
+  font: "Oswald", sans-serif;
   text-align: left;
   margin: 20px;
   color: #ff9600;
@@ -59,7 +59,6 @@
   padding: 10px 0;
 }
 .body {
-  background-color: rgba(193, 175, 85, 0.852);
   height: 300px;
 }
 .pourcent_bar {
@@ -83,7 +82,11 @@ span.pourcent {
 }
 
 .goodLocalisation {
+  display: flex;
   height: 300px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* ---------------------------  RadioGroup ----------------------------------------*/
@@ -118,6 +121,17 @@ span.pourcent {
 .btnRadioSelected {
   background-color: #ff9600;
   border: #ff6200 solid 2px;
+}
+
+.mentionsLegales {
+  font-size: medium;
+  text-decoration: underline #ff9500;
+  /*  text-decoration: underline; */
+}
+
+.mentionsLegalesText {
+  font-size: small;
+  text-decoration: initial;
 }
 
 /* .btnRadioUnselected :hover {

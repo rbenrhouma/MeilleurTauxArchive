@@ -1,8 +1,17 @@
 import React from "react";
+import CountrySelect from "./CountrySelect";
+import PostalCode from "./PostalCode";
+import "./style.css";
 
 import "./style.css";
 
 const GoodLocalisation = props => {
-  return <div className="goodLocalisation"></div>;
+  let value = "";
+  return (
+    <div className="goodLocalisation">
+      <CountrySelect></CountrySelect>
+      <PostalCode></PostalCode>
+    </div>
+  );
 };
 export default GoodLocalisation;

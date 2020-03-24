@@ -1,13 +1,12 @@
 import React from "react";
 
-
 import "./style.css";
 
-const ContactDetails = props => {
+const TheEnd = props => {
   return (
     <div className="goodLocalisation">
-      <p>Contact details</p>
+      <p>Votre numéro de dossier est le : {props.numDossier}</p>
     </div>
   );
 };
-export default ContactDetails;
+export default TheEnd;

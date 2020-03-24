@@ -5,6 +5,7 @@ import Title from "./Title";
 import GoodLocalisation from "./GoodLocalisation";
 import GoodCost from "./GoodCost";
 import ContactDetails from "./ContactDetails";
+import TheEnd from "./TheEnd";
 import "./style.css";
 
 const Body = props => {
@@ -18,6 +19,7 @@ const Body = props => {
         {pageIndex === 5 && <GoodLocalisation />}
         {pageIndex === 6 && <GoodCost />}
         {pageIndex === 7 && <ContactDetails />}
+        {pageIndex === 8 && <TheEnd numDossier={"00000000000000"} />}
       </div>
     </>
   );

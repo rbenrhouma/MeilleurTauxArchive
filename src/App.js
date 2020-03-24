@@ -3,14 +3,18 @@ import Header from "./components/Head";
 import Cookies from "universal-cookie";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
+import MentionsLegales from "./components/MentionsLegales";
+
 import "./App.css";
 
 function App() {
-  const [indexPage, setIndexPage] = useState(1);
-  const [progression, setProgression] = useState(0);
   let cookies = new Cookies();
+  const [indexPage, setIndexPage] = useState(
+    cookies.get("myState") ? cookies.get("myState").pageIndex : 1
+  );
+  const [progression, setProgression] = useState(0);
 
-  var initialStore = {
+  let initialStore = {
     pageIndex: -1
   };
 
@@ -23,7 +27,7 @@ function App() {
     if (indexPage < 8) initialStore.pageIndex = indexPage;
     else initilizeCookies();
     cookies.set("myState", initialStore, { path: "/" });
-    console.log(cookies.get("myState"));
+    //console.log(cookies.get("myState"));
   }, [indexPage]);
 
   const nextPage = () => {
@@ -47,6 +51,7 @@ function App() {
         onPriorPage={priorPage}
         onNextPage={nextPage}
       ></Footer>
+      <MentionsLegales></MentionsLegales>
     </div>
   );
 }
