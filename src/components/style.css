@@ -69,7 +69,7 @@
 }
 span.pourcent {
   position: relative;
-  top: -20px;
+  top: -25px;
   background: #ff9500;
   border-radius: 50%;
   color: #ffffff;
@@ -133,7 +133,11 @@ span.pourcent {
   font-size: small;
   text-decoration: initial;
 }
+.radioBtn {
+  width: 5%;
+  height: 1.3em;
 
+}
 /* .btnRadioUnselected :hover {
   background-color: #ff9600;
   border: #ffffff solid 3px;

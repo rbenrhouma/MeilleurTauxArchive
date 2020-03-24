@@ -8,23 +8,27 @@ export default function PostalCode() {
   const [postalCodes, setPostalCodes] = useState([]);
 
   useEffect(() => {
-    //console.log(postalCodes.cities);
-    postalCodes.map(city => {
-      console.log(city.code + " - " + city.city);
-    });
+    // postalCodes.map(city => {
+    //   console.log(city.code + " - " + city.city);
+    // });
   }, [postalCodes]);
 
   const onTagsChange = (event, values) => {};
 
   const fetchPostalCode = (e, v) => {
-    axios
-      .get(`https://vicopo.selfbuild.fr/cherche/${e.target.value}`)
-      .then(response => {
-        setPostalCodes(response.data.cities);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    if (e) {
+      //console.log(e.target);
+      axios
+        .get(`https://vicopo.selfbuild.fr/cherche/${e.target.value}`)
+        .then(response => {
+          setPostalCodes(response.data.cities);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } else {
+      setPostalCodes([]);
+    }
   };
 
   return (

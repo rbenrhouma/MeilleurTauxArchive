@@ -15,6 +15,12 @@ const BouttonRadio = props => {
         }
       >
         <span index={index} selectedItem={selectedItem}>
+          <input
+            className="radioBtn"
+            type="radio"
+            checked={index === selectedItem}
+          />
+
           {props.caption}
         </span>
       </div>

@@ -13,7 +13,7 @@ const Body = props => {
   const data = DataPages[pageIndex - 1];
   return (
     <>
-      <Title title={`${data[0].title}  - (${pageIndex})`}> </Title>
+      {data && <Title title={`${data[0].title}  - (${pageIndex})`}> </Title>}
       <div className="body" id="body_form">
         {pageIndex < 5 && <RadioGroup InterfaceData={data} />}
         {pageIndex === 5 && <GoodLocalisation />}
