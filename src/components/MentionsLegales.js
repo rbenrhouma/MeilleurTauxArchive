@@ -9,8 +9,10 @@ const MentionsLegales = props => {
   return (
     <div>
       <a onClick={onMentionsLegalClick}>
-        <div className="mentionsLegalesTitle" >
-          <span>* Champ obligatoire - </span>
+        <div className="mentionsLegalesTitle">
+          <span className={props.pageInex < 8 ? "" : "noneElement"}>
+            * Champ obligatoire -
+          </span>
           <span className="mentionsLegales">Mentions Légales</span>
         </div>
         {showText && (

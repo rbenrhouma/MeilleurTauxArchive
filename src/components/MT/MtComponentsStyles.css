@@ -1,5 +1,5 @@
 .mtInputBar {
-  height: 90px;
+  height: 78px;
   margin: 10px;
   display: flex;
   flex-direction: row;
@@ -36,7 +36,7 @@
 
 .mtInput {
   width: 380px;
-  height: 56px;
+  height: 40px;
   padding-left: 20px;
   font-size: xx-large;
   font-weight: bold;

@@ -89,7 +89,7 @@ class MTAutocomplete extends Component {
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         suggestionsListComponent = (
-          <ul class="suggestions">
+          <ul className="suggestions">
             {filteredSuggestions.map((suggestion, index) => {
               let className;
               if (index === activeSuggestion) {
@@ -105,7 +105,7 @@ class MTAutocomplete extends Component {
         );
       } else {
         suggestionsListComponent = (
-          <div class="no-suggestions">
+          <div className="no-suggestions">
             <em>No suggestions, you're on your own!</em>
           </div>
         );

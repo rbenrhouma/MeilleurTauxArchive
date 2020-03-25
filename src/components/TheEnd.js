@@ -4,8 +4,9 @@ import "./style.css";
 
 const TheEnd = props => {
   return (
-    <div className="goodLocalisation">
-      <p>Votre numéro de dossier est le : {props.numDossier}</p>
+    <div className="theEndBody">
+      <p>Votre numéro de dossier est le : </p>
+      <p className="textBold">{`  ${props.numDossier}`}</p>
     </div>
   );
 };

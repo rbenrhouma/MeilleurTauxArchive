@@ -52,7 +52,7 @@ function App() {
         onNextPage={nextPage}
         currentFormIsValid={currentFormIsValid}
       ></Footer>
-      <MentionsLegales></MentionsLegales>
+      <MentionsLegales pageInex={indexPage} />
     </div>
   );
 }
