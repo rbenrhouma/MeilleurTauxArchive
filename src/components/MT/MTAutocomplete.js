@@ -14,7 +14,6 @@ class MTAutocomplete extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       activeSuggestion: 0,
       filteredSuggestions: [],
@@ -26,11 +25,11 @@ class MTAutocomplete extends Component {
   onChange = e => {
     const { suggestions } = this.props;
     const userInput = e.currentTarget.value;
+
     const filteredSuggestions = suggestions.filter(
       suggestion =>
         suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
-
     this.setState({
       activeSuggestion: 0,
       filteredSuggestions,
@@ -106,7 +105,7 @@ class MTAutocomplete extends Component {
       } else {
         suggestionsListComponent = (
           <div className="no-suggestions">
-            <em>No suggestions, you're on your own!</em>
+            <em>Aucune suggestions!</em>
           </div>
         );
       }

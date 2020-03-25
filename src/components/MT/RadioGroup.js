@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
-import BouttonRadio from "./BouttonRadio";
+import RadioBoutton from "./RadioBoutton";
+
+import "../style.css";
 
 const RadioGroup = props => {
   const { InterfaceData } = props;
@@ -20,13 +21,13 @@ const RadioGroup = props => {
           InterfaceData.map((radioBtn, index) => {
             return (
               index > 0 && (
-                <BouttonRadio
+                <RadioBoutton
                   key={index}
                   index={index}
                   selectedItem={selectedItem}
                   caption={radioBtn.caption}
                   onSelect={onSelectItem}
-                ></BouttonRadio>
+                ></RadioBoutton>
               )
             );
           })}

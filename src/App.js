@@ -13,9 +13,25 @@ function App() {
   );
   const [progression, setProgression] = useState(0);
   const [currentFormIsValid, setCurrentFormIsValid] = useState(true);
+  const [devis, setDevis] = useState(cookies.get("devis"));
 
   let initialStore = {
     pageIndex: 1
+  };
+
+  let _devis = {
+    typeBien: 0, // 0: maison, 1: Appartement
+    etatBien: 0, // 0: Ancien, 1: Neuf
+    usageBien: 0, // 0: Résience principal, 1: Résience secondaire, 2: Investissement locatif
+    situationUser: 0, //0: Locataire, 1 propriétaire, 2: Bénificiaire d'un logement de fonction, 3: Hébergé à titre gatuit.
+    pays: "FR",
+    codePostal: "",
+    montantAquisition: 0,
+    montantTravaux: 0,
+    fraisNotaire: 0,
+    budgetTotal: 0,
+    email: "",
+    numDossier: 0
   };
 
   const initilizeCookies = () => {
@@ -40,11 +56,15 @@ function App() {
   const checkFormValide = valid => {
     setCurrentFormIsValid(valid);
   };
+
   return (
     <div className="App">
-      <Header></Header>
-
-      <Body pageIndex={indexPage} checkFormValide={checkFormValide} />
+      <Header pageIndex={indexPage}></Header>
+      <Body
+        pageIndex={indexPage}
+        checkFormValide={checkFormValide}
+        devis={_devis}
+      />
       <Footer
         pageInex={indexPage}
         progression={progression}

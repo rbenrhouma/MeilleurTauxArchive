@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import email from "../assets/visuel-desktop-email.jpg";
 import MTInputBar from "./MT/MTInputBar";
+import conf from "../assets/confidentiel.png";
 import "./style.css";
 
 const ContactDetails = props => {
   const { checkFormValide } = props;
+
+  const [mail, setMail] = useState("");
+
   const [formeValide, setFormeValide] = useState(false);
   const [eMailValide, setEMailValide] = useState(false);
   const [okMail, setOkMail] = useState(false);
@@ -12,7 +16,11 @@ const ContactDetails = props => {
   useEffect(() => {
     setFormeValide(okMail && eMailValide);
     checkFormValide(okMail);
-  }, [okMail, eMailValide]);
+  }, [okMail, eMailValide, mail]);
+
+  const onChange = e => {
+    setMail(e.target.value);
+  };
 
   function handleChange(e) {}
   return (
@@ -27,13 +35,15 @@ const ContactDetails = props => {
       </div>
       <MTInputBar
         name={"email"}
-        handleChange={handleChange}
-        value={"test@tes.com"}
+        value={mail}
         type={"text"}
         odd={true}
+        handleChange={onChange}
         caption={"Adresse email de l'enpreinteur *"}
         txtInfo={"bla bla bla 11111111..."}
+        icone={conf}
       />
+
       <div className="mtCheckboxContainer">
         <input
           className="mtCheckbox"

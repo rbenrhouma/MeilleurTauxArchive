@@ -1,7 +1,7 @@
 import React from "react";
-import "./style.css";
+import "../style.css";
 
-const BouttonRadio = props => {
+const RadioBoutton = props => {
   const { index, selectedItem, onSelect } = props;
 
   return (
@@ -20,11 +20,10 @@ const BouttonRadio = props => {
             type="radio"
             checked={index === selectedItem}
           />
-
           {props.caption}
         </span>
       </div>
     </>
   );
 };
-export default BouttonRadio;
+export default RadioBoutton;

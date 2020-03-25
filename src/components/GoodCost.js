@@ -65,6 +65,7 @@ const GoodCost = props => {
         odd={false}
         caption={"Budjet total estimé du projet"}
         txtInfo={"bla bla bla 444444 ..."}
+        diasabled
       />
     </div>
   );

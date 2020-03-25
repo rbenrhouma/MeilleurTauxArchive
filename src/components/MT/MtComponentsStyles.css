@@ -1,3 +1,10 @@
+:root {
+  --main-org-color: #f19b38;
+  --main-org2-color: #d78430;
+  --main-odd-color: #f1f1f1;
+  --main-shadow-color: #c1c1c1;
+}
+
 .mtInputBar {
   height: 78px;
   margin: 10px;
@@ -5,7 +12,7 @@
   flex-direction: row;
 }
 .mtInputBarOdd {
-  background-color: #f1f1f1;
+  background-color: var(--main-odd-color);
 }
 .mtCaption {
   margin-left: 50px;
@@ -15,6 +22,7 @@
   margin-top: 20px;
   text-align: left;
 }
+
 .mtInfo {
   display: flex;
   height: 30px;
@@ -22,8 +30,8 @@
   border-radius: 15px;
   margin-top: 22px;
   margin-right: 20px;
-  border: #c1c1c1 solid 1px;
-  box-shadow: 3px 3px #c1c1c1;
+  border: var(--main-shadow-color) solid 1px;
+  box-shadow: 3px 3px var(--main-shadow-color);
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -36,16 +44,34 @@
 
 .mtInput {
   width: 380px;
-  height: 40px;
+  height: 54px;
   padding-left: 20px;
   font-size: xx-large;
   font-weight: bold;
-  border: #ebb360 solid 1px;
-  border-bottom: #ebb360 solid 4px;
+  border: var(--main-org-color) solid 1px;
+  border-bottom: var(--main-org-color) solid 4px;
   border-radius: 5px;
   margin-top: 8px;
 }
 
+.mtInputDisabled {
+  width: 380px;
+  height: 54px;
+  padding-left: 20px;
+  font-size: xx-large;
+  font-weight: bold;
+  border: var(--main-shadow-color) solid 1px;
+  border-bottom: var(--main-shadow-color) solid 4px;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+.mtInputIcone {
+  position: relative;
+  left: -30px;
+  width: 80px;
+  height: 80px;
+}
 .mtCurrency {
   font-size: xx-large;
   margin-top: 18px;

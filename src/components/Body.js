@@ -1,5 +1,5 @@
 import React from "react";
-import RadioGroup from "./RadioGroup";
+import RadioGroup from "./MT/RadioGroup";
 import DataPages from "../constantes/InterfaceData";
 import Title from "./Title";
 import GoodLocalisation from "./GoodLocalisation";
