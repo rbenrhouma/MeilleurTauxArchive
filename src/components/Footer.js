@@ -24,7 +24,9 @@ const Footer = props => {
               }
               onClick={onNextPage}
             >
-              <span>{pageInex === maxPage - 1 ? "VALIDER" : "SUIVANT"}</span>
+              <span className="btnContainerText">
+                {pageInex === maxPage - 1 ? "VALIDER" : "SUIVANT"}
+              </span>
             </a>
           )}
         </div>

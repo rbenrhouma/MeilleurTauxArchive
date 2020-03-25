@@ -2,6 +2,7 @@ import React from "react";
 import CountrySelect from "./CountrySelect";
 import PostalCode from "./PostalCode";
 import MTAutocomplete from "./MT/MTAutocomplete";
+import countriesList from "../constantes/CountryData";
 import "./style.css";
 
 import "./style.css";
@@ -14,18 +15,9 @@ const GoodLocalisation = props => {
       <PostalCode></PostalCode>
 
       <MTAutocomplete
-        suggestions={[
-          "Alligator",
-          "Bask",
-          "Crocodilian",
-          "Death Roll",
-          "Eggs",
-          "Jaws",
-          "Reptile",
-          "Solitary",
-          "Tail",
-          "Wetlands"
-        ]}
+        suggestions={countriesList.map(
+          option => option.label + " ( " + option.code + " )"
+        )}
       />
     </div>
   );

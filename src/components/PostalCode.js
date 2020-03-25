@@ -32,7 +32,7 @@ export default function PostalCode() {
   };
 
   return (
-    <div style={{ width: 300 }}>
+    <div style={{ width: 400 }}>
       <Autocomplete
         options={postalCodes.map(
           option => option.code + " ( " + option.city + " )"
@@ -42,7 +42,7 @@ export default function PostalCode() {
           setInput(v);
         }}
         onInputChange={fetchPostalCode}
-        style={{ width: 300, marginTop: 20 }}
+        style={{ width: 400, marginTop: 20 }}
         renderInput={params => (
           <TextField
             {...params}
