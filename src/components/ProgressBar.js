@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const ProgressBar = props => {
   const { pourcentage } = props;
-  //let position = -425 + pourcentage * 8;
-  let position = (pourcentage * 815) / 100;
-  console.log(pourcentage);
-  console.log(position);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const width = ref.current ? ref.current.offsetWidth : 0;
+    console.log("width", width);
+  }, [ref.current]);
+
+  const progressWidth = ref.current ? ref.current.offsetWidth : 0;
+  let position = (pourcentage * progressWidth) / 100;
+
   return (
     <>
-      <div className="progress-bar">
+      <div ref={ref} className="progress-bar">
         <div className="pourcent_bar" style={{ width: pourcentage + "%" }}>
           <span className="pourcent" style={{ left: position + "px" }}>
             {pourcentage}%
