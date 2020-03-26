@@ -23,11 +23,14 @@ const MTInputBar = props => {
   return (
     <div className={odd === true ? "mtInputBar mtInputBarOdd" : "mtInputBar"}>
       <div className="mtCaption">{caption}</div>
+
       <div
+        data-tip={txtInfo}
         className={
           txtInfo && txtInfo != "" ? "mtInfo  " : "mtInfo hideElement "
         }
       >
+        <ReactTooltip multiline={true} />
         <img src={infoIco} alt={"I"} />
       </div>
 
