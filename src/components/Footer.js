@@ -3,7 +3,13 @@ import "./style.css";
 import ProgressBar from "./ProgressBar";
 
 const Footer = props => {
-  const { onNextPage, onPriorPage, pageInex, currentFormIsValid } = props;
+  const {
+    onNextPage,
+    onPriorPage,
+    pageInex,
+    progression,
+    currentFormIsValid
+  } = props;
   const maxPage = 8;
   return (
     <>
@@ -15,7 +21,7 @@ const Footer = props => {
             </a>
           )}
         </div>
-        {pageInex < maxPage && <ProgressBar pourcentage={props.progression} />}
+        {pageInex < maxPage && <ProgressBar pourcentage={progression} />}
         <div className="btnContainer">
           {pageInex < maxPage && (
             <a

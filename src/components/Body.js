@@ -14,7 +14,7 @@ const Body = props => {
 
   return (
     <>
-      {data && <Title title={`${data[0].title}  - (${pageIndex})`}> </Title>}
+      {data && <Title title={`${data[0].title}  `}> </Title>}
       <div className="body" id="body_form">
         {pageIndex < 5 && <RadioGroup InterfaceData={data} />}
         {pageIndex === 5 && <GoodLocalisation />}

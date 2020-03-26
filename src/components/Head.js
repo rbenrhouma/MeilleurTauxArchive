@@ -21,11 +21,19 @@ const Header = props => {
         <img src={logo} alt={"logo"} onClick={onIconeClick} />
         <h3>Crédit immobilier : 5 mn pour obtenir le meilleur taux</h3>
       </div>
-      <div
-        className={showButtonBackOffice ? "backObbiceBtn" : "noneElement"}
-        onClick={onClick}
-      >
-        Back Office
+      <div>
+        <div
+          className={showButtonBackOffice ? "backObbiceBtn" : "noneElement"}
+          onClick={onClick}
+        >
+          Back Office
+        </div>
+        <div>
+          <input
+            type="password"
+            className={showButtonBackOffice ? "backObbiceInput" : "noneElement"}
+          ></input>
+        </div>
       </div>
     </div>
   );

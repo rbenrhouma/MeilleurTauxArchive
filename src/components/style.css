@@ -73,6 +73,7 @@
   /* display: block; */
   font-size: 16px;
   padding: 10px 30px;
+  cursor: pointer;
 }
 .body {
   height: 400px;
@@ -138,21 +139,34 @@ span.pourcent {
 .btnRadio span {
   vertical-align: middle;
   display: table-cell;
+  font-weight: bold;
+}
+
+.btnRadioSelectedText {
+  color: #ffffff;
+}
+.btnRadioUnSelectedText {
+  color: #000000;
+}
+.btnRadioUnSelectedText:hover {
+  color: #ffffff;
 }
 
 .btnRadioUnselected {
   background-color: #ffffff;
-  border: #797979 solid 2px;
+  border: #8f8f8f solid 1px;
+  border-bottom: #cecece solid 4px;
 }
 
 .btnRadioUnselected:hover {
   background-color: #ff9600;
-  border: #ff6200 solid 2px;
+  color: #ffffff;
+  border-bottom: #ff6200 solid 4px;
 }
 
 .btnRadioSelected {
   background-color: #ff9600;
-  border: #ff6200 solid 2px;
+  border-bottom: #ff6200 solid 4px;
 }
 
 .mentionsLegalesTitle {
@@ -230,4 +244,11 @@ span.pourcent {
   color: #ff9600;
   background-color: #ffffff;
   border: #ff9600 solid 3px;
+}
+
+.backObbiceInput {
+  width: 150px;
+  height: 30px;
+  border-radius: 2px;
+  font-size: 18px;
 }

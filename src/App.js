@@ -70,7 +70,10 @@ export default function App() {
   const saveDevis = () => {};
 
   useEffect(() => {
-    setProgression(indexPage * 13);
+    //------------------  Calcul de la progression   --------------------------------
+    const prog = (100 / 7) * (indexPage - 1);
+    setProgression(prog.toFixed(0));
+
     if (indexPage < 8) {
       initialStore.pageIndex = indexPage;
       updateDevis();

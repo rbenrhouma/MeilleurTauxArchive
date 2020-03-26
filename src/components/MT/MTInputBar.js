@@ -3,8 +3,8 @@ import ReactTooltip from "react-tooltip";
 import MTInput from "./MTInput";
 import MTPostalCode from "./MTPostalCode";
 import MTCountry from "./MTCountry";
-
 import "./MtComponentsStyles.css";
+import infoIco from "../../assets/infoIcone.png";
 
 const MTInputBar = props => {
   const {
@@ -25,11 +25,11 @@ const MTInputBar = props => {
       <div className="mtCaption">{caption}</div>
       <div
         className={
-          txtInfo && txtInfo != ""
-            ? "mtInfo  fa fa-info"
-            : "mtInfo hideElement fa fa-info"
+          txtInfo && txtInfo != "" ? "mtInfo  " : "mtInfo hideElement "
         }
-      ></div>
+      >
+        <img src={infoIco} alt={"I"} />
+      </div>
 
       {type2 == undefined && (
         <MTInput

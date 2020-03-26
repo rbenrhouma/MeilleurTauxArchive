@@ -14,7 +14,15 @@ const RadioBoutton = props => {
             : "btnRadio btnRadioUnselected"
         }
       >
-        <span index={index} selectedItem={selectedItem}>
+        <span
+          className={
+            index === selectedItem
+              ? "btnRadioSelectedText"
+              : "btnRadioUnSelectedText"
+          }
+          index={index}
+          selectedItem={selectedItem}
+        >
           <input
             className="radioBtn"
             type="radio"

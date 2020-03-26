@@ -11,7 +11,6 @@ export default function MTPostalCode(props) {
   useEffect(() => {}, [postalCodes]);
 
   const localHandleChange = e => {
-    console.log(e.target.value);
     setPostalCode(e.target.value);
   };
 
@@ -19,9 +18,9 @@ export default function MTPostalCode(props) {
     fetchPostalCode(postalCode);
   }, [postalCode]);
 
-  const fetchPostalCode = e => {
+  const fetchPostalCode = async e => {
     if (e) {
-      axios
+      const response = await axios
         .get(`https://vicopo.selfbuild.fr/cherche/${postalCode}`)
         .then(response => {
           setPostalCodes(response.data.cities);

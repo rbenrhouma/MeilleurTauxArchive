@@ -7,10 +7,8 @@ export default function MTCountry(props) {
   return (
     <div>
       <select
-        className={
-          (diasabled ? " mtInputDisabled " : "mtInput ") +
-          (type === "number" ? " right " : " mtInput ")
-        }
+        className={diasabled ? " mtInputDisabled " : "mtInput "}
+        style={{ width: 400, height: 64 }}
         name="pets"
         id="pet-select"
       >
