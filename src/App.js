@@ -6,7 +6,9 @@ import Footer from "./components/Footer";
 import MentionsLegales from "./components/MentionsLegales";
 import "./App.css";
 
-function App() {
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+export default function App() {
   let cookies = new Cookies();
   const [indexPage, setIndexPage] = useState(
     cookies.get("myState") ? cookies.get("myState").pageIndex : 1
@@ -18,6 +20,19 @@ function App() {
   let initialStore = {
     pageIndex: 1
   };
+
+  const [typeBien, setTypeBien] = useState(0);
+  const [etatBien, setEtatBien] = useState(0);
+  const [usageBien, setUsageBien] = useState(0);
+  const [situationUser, setSituationUser] = useState(0);
+  const [pays, setPays] = useState("");
+  const [codePostal, setCodePostal] = useState("");
+  const [montantAquisition, setMontantAquisition] = useState(0);
+  const [montantTravaux, setMontantTravaux] = useState(0);
+  const [fraisNotaire, setFraisNotaire] = useState(0);
+  const [budgetTotal, setBudgetTotal] = useState(0);
+  const [email, setEmail] = useState(0);
+  const [numDossier, setNumDossier] = useState(0);
 
   let _devis = {
     typeBien: 0, // 0: maison, 1: Appartement
@@ -31,19 +46,41 @@ function App() {
     fraisNotaire: 0,
     budgetTotal: 0,
     email: "",
-    numDossier: 0
+    numDossier: ""
   };
 
   const initilizeCookies = () => {
     initialStore.pageIndex = 1;
   };
 
+  const updateDevis = () => {
+    _devis.typeBien = typeBien;
+    _devis.etatBien = etatBien;
+    _devis.usageBien = usageBien;
+    _devis.situationUser = situationUser;
+    _devis.pays = pays;
+    _devis.codePostal = codePostal;
+    _devis.montantAquisition = montantAquisition;
+    _devis.montantTravaux = montantTravaux;
+    _devis.fraisNotaire = fraisNotaire;
+    _devis.budgetTotal = budgetTotal;
+    _devis.email = email;
+    _devis.numDossier = numDossier;
+  };
+  const saveDevis = () => {};
+
   useEffect(() => {
     setProgression(indexPage * 13);
-    if (indexPage < 8) initialStore.pageIndex = indexPage;
-    else initilizeCookies();
+    if (indexPage < 8) {
+      initialStore.pageIndex = indexPage;
+      updateDevis();
+    } else {
+      initilizeCookies();
+      saveDevis();
+    }
     cookies.set("myState", initialStore, { path: "/" });
-  }, [indexPage]);
+    cookies.set("devis", _devis, { path: "/" });
+  }, [indexPage, devis]);
 
   const nextPage = () => {
     if (currentFormIsValid) setIndexPage(indexPage + 1);
@@ -75,6 +112,66 @@ function App() {
       <MentionsLegales pageInex={indexPage} />
     </div>
   );
+
+  // return (
+  //   <Router>
+  //     <div>
+  //       <nav>
+  //         <ul>
+  //           <li>
+  //             <Link to="/">Home</Link>
+  //           </li>
+  //           <li>
+  //             <Link to="/typebien">Type de bien</Link>
+  //           </li>
+
+  //           <li>
+  //             <Link to="/etatbien">Etat de bien</Link>
+  //           </li>
+  //         </ul>
+  //       </nav>
+  //       <Switch>
+  //         <Route path="/typebien">
+  //           <screenTypeBien />
+  //         </Route>
+
+  //         <Route path="/etatbien">
+  //           <screenEtatBien />
+  //         </Route>
+
+  //         <Route path="/">
+  //           <screenTypeBien />
+  //         </Route>
+  //       </Switch>
+  //     </div>
+  //   </Router>
+  // );
 }
 
-export default App;
+function screenTypeBien() {
+  return <h2>01-screenTypeBien</h2>;
+}
+function screenEtatBien() {
+  return <h2>02-screenEtatBien</h2>;
+}
+function screenUsageBien() {
+  return <h2>03-screenUsageBien</h2>;
+}
+function screenSituationUser() {
+  return <h2>04-screenSituationUser</h2>;
+}
+function screenLocalisationBien() {
+  return <h2>05-LocalisationBien</h2>;
+}
+function screenBudgetBien() {
+  return <h2>06-screenBudgetBien</h2>;
+}
+function screenCoordonneesUser() {
+  return <h2>07-screenCoordonneesUser</h2>;
+}
+function screenFin() {
+  return <h2>08-screenFin</h2>;
+}
+function screenBackOffice() {
+  return <h2>99-screenBackOffice</h2>;
+}

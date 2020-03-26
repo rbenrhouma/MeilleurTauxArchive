@@ -46,7 +46,7 @@
   width: 380px;
   height: 54px;
   padding-left: 20px;
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: bold;
   border: var(--main-org-color) solid 1px;
   border-bottom: var(--main-org-color) solid 4px;
@@ -58,7 +58,7 @@
   width: 380px;
   height: 54px;
   padding-left: 20px;
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: bold;
   border: var(--main-shadow-color) solid 1px;
   border-bottom: var(--main-shadow-color) solid 4px;
@@ -73,8 +73,8 @@
   height: 80px;
 }
 .mtCurrency {
-  font-size: xx-large;
-  margin-top: 18px;
+  font-size: x-large;
+  margin-top: 14px;
   margin-left: 10px;
 }
 

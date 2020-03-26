@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactTooltip from "react-tooltip";
 import MTInput from "./MTInput";
+import MTPostalCode from "./MTPostalCode";
+import MTCountry from "./MTCountry";
 
 import "./MtComponentsStyles.css";
 
@@ -13,11 +15,10 @@ const MTInputBar = props => {
     handleChange,
     value,
     type,
+    type2,
     icone,
     diasabled
   } = props;
-
-  console.log(icone);
 
   return (
     <div className={odd === true ? "mtInputBar mtInputBarOdd" : "mtInputBar"}>
@@ -30,13 +31,34 @@ const MTInputBar = props => {
         }
       ></div>
 
-      <MTInput
-        name={name}
-        handleChange={handleChange}
-        value={value}
-        type={type}
-        diasabled={diasabled ? diasabled : null}
-      />
+      {type2 == undefined && (
+        <MTInput
+          name={name}
+          handleChange={handleChange}
+          value={value}
+          type={type}
+          diasabled={diasabled ? diasabled : null}
+        />
+      )}
+      {type2 === "postalCode" && (
+        <MTPostalCode
+          name={name}
+          handleChange={handleChange}
+          value={value}
+          type={type}
+          diasabled={diasabled ? diasabled : null}
+        />
+      )}
+      {type2 === "country" && (
+        <MTCountry
+          name={name}
+          handleChange={handleChange}
+          value={value}
+          type={type}
+          diasabled={diasabled ? diasabled : null}
+        />
+      )}
+
       {icone && <img className="mtInputIcone" src={icone} alt={"Conf"} />}
       {type === "number" && <div className="mtCurrency">€</div>}
     </div>

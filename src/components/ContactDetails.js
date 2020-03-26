@@ -36,7 +36,7 @@ const ContactDetails = props => {
       <MTInputBar
         name={"email"}
         value={mail}
-        type={"text"}
+        type={"email"}
         odd={true}
         handleChange={onChange}
         caption={"Adresse email de l'enpreinteur *"}

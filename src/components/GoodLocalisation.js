@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import MTInputBar from "./MT/MTInputBar";
 import "./style.css";
 
-import "./style.css";
-
 const GoodLocalisation = props => {
   const [country, setCountry] = useState("FR");
   const [postalCode, setPostalCode] = useState("");
@@ -19,6 +17,7 @@ const GoodLocalisation = props => {
         handleChange={handleChange}
         value={country}
         type={"text"}
+        type2={"country"}
         odd={true}
         caption={"Dans quel pzys se situe votre projet ? *"}
         txtInfo={"bla bla bla 11111111..."}
@@ -28,6 +27,7 @@ const GoodLocalisation = props => {
         handleChange={handleChange}
         value={postalCode}
         type={"text"}
+        type2={"postalCode"}
         odd={true}
         caption={"Ville ou code postal *"}
         txtInfo={"bla bla bla 11111111..."}
