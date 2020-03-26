@@ -32,6 +32,19 @@ body {
   color: #61dafb;
 }
 
+ul {
+  list-style-type: none;
+  columns: 10;
+  -webkit-columns: 10;
+  -moz-columns: 10;
+}
+
+li {
+  width: 10%;
+  height: 80px;
+  font-size: 18px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

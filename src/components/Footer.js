@@ -1,29 +1,53 @@
 import React from "react";
-import "./style.css";
+import { useHistory } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
-
+import "./style.css";
 const Footer = props => {
-  const {
-    onNextPage,
-    onPriorPage,
-    pageInex,
-    progression,
-    currentFormIsValid
-  } = props;
+  const history = useHistory();
+  const { pageIndex, setPageIndex, nextPath, priorPath } = props.context;
+
   const maxPage = 8;
+
+  const currentFormIsValid = true;
+
+  const onPriorPage = () => {
+    if (priorPath) {
+      history.push(priorPath);
+      setPageIndex(Number(pageIndex) - 1);
+    } else {
+      alert("Erreur");
+      console.log(props);
+    }
+  };
+
+  const onNextPage = () => {
+    if (nextPath) {
+      history.push(nextPath);
+      setPageIndex(Number(pageIndex) + 1);
+    } else {
+      alert("Veuillez remplir les champs obligatoires");
+      console.log(props);
+    }
+  };
+
+  const progression = () => {
+    const psc = (100 / 7) * (pageIndex - 1);
+    return psc.toFixed(0);
+  };
+
   return (
     <>
       <div className="pagination" id="btn_form">
         <div className="btnContainer">
-          {pageInex > 1 && pageInex < maxPage && (
+          {pageIndex > 1 && pageIndex < maxPage && (
             <a className="prev btPrev " onClick={onPriorPage}>
               <span>Précédent</span>
             </a>
           )}
         </div>
-        {pageInex < maxPage && <ProgressBar pourcentage={progression} />}
+        {pageIndex < maxPage && <ProgressBar pourcentage={progression()} />}
         <div className="btnContainer">
-          {pageInex < maxPage && (
+          {pageIndex < maxPage && (
             <a
               className={
                 currentFormIsValid ? "next btNext" : "next btNextDisabled"
@@ -31,7 +55,7 @@ const Footer = props => {
               onClick={onNextPage}
             >
               <span className="btnContainerText">
-                {pageInex === maxPage - 1 ? "VALIDER" : "SUIVANT"}
+                {pageIndex === maxPage - 1 ? "VALIDER" : "SUIVANT"}
               </span>
             </a>
           )}

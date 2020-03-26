@@ -9,7 +9,7 @@ import TheEnd from "./TheEnd";
 import "./style.css";
 
 const Body = props => {
-  const { pageIndex, checkFormValide } = props;
+  const { pageIndex, checkFormValide } = props.context;
   const data = DataPages[pageIndex - 1];
 
   return (

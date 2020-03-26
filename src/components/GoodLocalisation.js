@@ -6,9 +6,7 @@ const GoodLocalisation = props => {
   const [country, setCountry] = useState("FR");
   const [postalCode, setPostalCode] = useState("");
 
-  function handleChange(e) {
-    console.log(e.target.value);
-  }
+  function handleChange(e) {}
 
   return (
     <div className="">

@@ -13,7 +13,7 @@ export default function MTCountry(props) {
         id="pet-select"
       >
         <option value="">Pays</option>
-        {countriesList.map(option => (
+        {countriesList.map((option, index) => (
           <option value={option.code} selected={option.selected}>
             {option.label}
           </option>
