@@ -230,11 +230,11 @@ span.pourcent {
 .backObbiceBtn {
   color: #ffffff;
   background-color: #ff9600;
-  padding-top: 35px;
+  padding-top: 3px;
   padding-left: 65px;
   margin: 30px;
   width: 150px;
-  height: 60px;
+  height: 40px;
   border-radius: 10px;
   font-weight: bold;
   font-size: 18px;
@@ -247,7 +247,7 @@ span.pourcent {
 }
 
 .backObbiceInput {
-  width: 150px;
+  width: 250px;
   height: 30px;
   border-radius: 2px;
   font-size: 18px;

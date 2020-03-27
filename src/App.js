@@ -30,8 +30,6 @@ export default function App() {
   const [nextPath, setNextPath] = useState("/");
   const [priorPath, setPriorPath] = useState("/");
 
-  const serverURL = "http://localhost:3000/";
-
   useEffect(() => {
     Cookies.set("devis", devis);
   }, [devis]);
@@ -59,7 +57,6 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
-              serverURL={serverURL}
             />
           </Route>
           {/* Page 2 */}
@@ -71,7 +68,6 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
-              serverURL={serverURL}
             />
           </Route>
           {/* Page 3 */}
@@ -83,7 +79,6 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
-              serverURL={serverURL}
             />
           </Route>
           {/* Page 4  */}
@@ -95,7 +90,6 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
-              serverURL={serverURL}
             />
           </Route>
           {/* Page 5  */}
@@ -107,7 +101,6 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
-              serverURL={serverURL}
             />
           </Route>
           {/* Page 6 */}
@@ -119,7 +112,6 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
-              serverURL={serverURL}
             />
           </Route>
           {/* Page 7  */}
@@ -131,7 +123,6 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
-              serverURL={serverURL}
             />
           </Route>
           {/* Page 8 The end */}
@@ -143,18 +134,17 @@ export default function App() {
               priorPath={null}
               devis={devis}
               setDevis={setDevis}
-              serverURL={serverURL}
             />
           </Route>
 
           {/* Page 9 : BackOffice */}
           <Route path={PagesPaths[8]}>
-            <ScreenBackOffice serverURL={serverURL} />
+            <ScreenBackOffice />
           </Route>
 
           {/* Page 10 : Détails */}
           <Route path="/details/:id">
-            <ScreenBackOfficeDetails serverURL={serverURL} />
+            <ScreenBackOfficeDetails />
           </Route>
         </Switch>
       </div>

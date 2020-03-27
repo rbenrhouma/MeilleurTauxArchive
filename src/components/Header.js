@@ -5,10 +5,9 @@ import logo from "../assets/logo.jpg";
 
 const Header = props => {
   const { pageIndex } = props.context;
-  const [showButtonBackOffice, setShowButtonBackOffice] = useState(false);
   const history = useHistory();
 
-  useEffect(() => {}, [showButtonBackOffice]);
+  useEffect(() => {}, []);
 
   const onClick = () => {
     console.log("Lance back office");
@@ -19,21 +18,15 @@ const Header = props => {
     history.push("/backoffice");
   };
 
-  const onIconeClick = () => {
-    if (pageIndex == 8) {
-      setShowButtonBackOffice(!showButtonBackOffice);
-    }
-  };
-
   return (
     <div className="headerContainer">
       <div className="header">
-        <img src={logo} alt={"logo"} onClick={onIconeClick} />
+        <img src={logo} alt={"logo"} />
         <h3>Crédit immobilier : 5 mn pour obtenir le meilleur taux</h3>
       </div>
       <div>
         <div
-          className={showButtonBackOffice ? "backObbiceBtn" : "noneElement"}
+          className={pageIndex === 8 ? "backObbiceBtn" : "noneElement"}
           onClick={onClick}
         >
           Back Office
@@ -41,7 +34,7 @@ const Header = props => {
         <div>
           <input
             type="password"
-            className={showButtonBackOffice ? "backObbiceInput" : "noneElement"}
+            className={pageIndex === 8 ? "backObbiceInput" : "noneElement"}
           ></input>
         </div>
       </div>

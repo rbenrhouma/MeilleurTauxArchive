@@ -16,9 +16,10 @@ import "./style.css";
 // devis.mail
 
 const TheEnd = props => {
-  const { devis, setDevis, serverURL } = props.context.context;
+  const { devis, setDevis } = props.context.context;
   const [devierNum, setDevierNum] = useState("");
-
+  //const serverURL ="http://localhost:3000/";
+  const serverURL = "https://meilleurtauxapi.herokuapp.com/";
   const saveData = async () => {
     if (
       devis.goodType &&
