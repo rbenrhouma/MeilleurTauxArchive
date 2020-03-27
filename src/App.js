@@ -23,9 +23,9 @@ import ScreenBackOffice from "./screens/ScreenBackOffice";
 import ScreenBackOfficeDetails from "./screens/ScreenBackOfficeDetail";
 
 export default function App() {
-  const [pageIndex, setPageIndex] = useState(Cookies.get("route") || "/");
+  const [pageIndex, setPageIndex] = useState(Cookies.get("page") || 1);
   const [devis, setDevis] = useState(Cookies.getJSON("devis") || {});
-  const [currentPath, setCurrentPath] = useState("/");
+  const [currentPath, setCurrentPath] = useState(Cookies.get("route") || "/");
 
   const [nextPath, setNextPath] = useState("/");
   const [priorPath, setPriorPath] = useState("/");
@@ -35,11 +35,14 @@ export default function App() {
   }, [devis]);
 
   useEffect(() => {
-    Cookies.set("route", currentPath);
     setCurrentPath(PagesPaths[pageIndex]);
     setNextPath(PagesPaths[Number(pageIndex) + 1]);
     setPriorPath(PagesPaths[Number(pageIndex) - 1]);
-  }, [currentPath]);
+    Cookies.set("route", currentPath);
+    console.log(pageIndex);
+    if (pageIndex > 0) Cookies.set("page", pageIndex);
+    else Cookies.set("page", 1);
+  }, [pageIndex]);
 
   return (
     <Router>
