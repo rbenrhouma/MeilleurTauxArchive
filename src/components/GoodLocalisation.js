@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MTInputBar from "./MT/MTInputBar";
 import "./style.css";
 
 const GoodLocalisation = props => {
+  console.log(props.context.context);
+  const { context } = props.context;
   const [country, setCountry] = useState("FR");
   const [postalCode, setPostalCode] = useState("");
 
-  function handleChange(e) {}
+  useEffect(() => {}, [country, postalCode]);
 
+  const handleChange = e => {
+    if (e.target) console.log(e.target);
+  };
   return (
     <div className="">
       <MTInputBar
         name={"coutry"}
         handleChange={handleChange}
+        context={props.context}
         value={country}
         type={"text"}
         type2={"country"}
@@ -23,6 +29,7 @@ const GoodLocalisation = props => {
       <MTInputBar
         name={"postalCode"}
         handleChange={handleChange}
+        context={props.context}
         value={postalCode}
         type={"text"}
         type2={"postalCode"}

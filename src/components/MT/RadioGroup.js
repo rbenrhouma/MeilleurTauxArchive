@@ -5,11 +5,15 @@ import "../style.css";
 
 const RadioGroup = props => {
   const { InterfaceData } = props;
+  const { setDevis, devis } = props.context.context;
   const [selectedItem, setSelectedItem] = useState(0);
 
   const onSelectItem = e => {
     const idx = e.target.getAttribute("index") * 1;
     setSelectedItem(idx);
+    setDevis({ ...devis, [props.InterfaceData[0].field]: idx });
+    console.log("----------------- devis --------------------");
+    console.log(devis);
   };
 
   useEffect(() => {}, [selectedItem]);

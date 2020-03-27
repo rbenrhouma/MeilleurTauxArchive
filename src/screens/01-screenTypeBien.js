@@ -7,12 +7,11 @@ import Footer from "../components/Footer";
 import PagesPaths from "../constantes/PagesPaths";
 
 const ScreenTypeBien = props => {
-  console.log(props);
   return (
     <>
       <Header context={props} />
       <Body context={props} />
-      <Footer context={props}  />
+      <Footer context={props} />
     </>
   );
 };

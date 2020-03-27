@@ -7,6 +7,7 @@ import "./MtComponentsStyles.css";
 import infoIco from "../../assets/infoIcone.png";
 
 const MTInputBar = props => {
+
   const {
     name,
     caption,

@@ -5,7 +5,6 @@ import "./MT/MtComponentsStyles.css";
 
 const Title = props => {
   const { txtInfo } = props;
-  console.log(props);
   return (
     <div className="mtInputBar">
       <div className="title">{props.title}</div>{" "}

@@ -18,11 +18,11 @@ const Body = props => {
         <Title title={`${data[0].title}  `} txtInfo={`${data[0].info}`}></Title>
       )}
       <div className="body" id="body_form">
-        {pageIndex < 5 && <RadioGroup InterfaceData={data} />}
-        {pageIndex === 5 && <GoodLocalisation />}
-        {pageIndex === 6 && <GoodCost />}
+        {pageIndex < 5 && <RadioGroup InterfaceData={data} context={props} />}
+        {pageIndex === 5 && <GoodLocalisation context={props} />}
+        {pageIndex === 6 && <GoodCost context={props} />}
         {pageIndex === 7 && (
-          <ContactDetails checkFormValide={checkFormValide} />
+          <ContactDetails checkFormValide={checkFormValide} context={props} />
         )}
         {pageIndex === 8 && <TheEnd numDossier={"00000000000000"} />}
       </div>

@@ -7,14 +7,16 @@ export default function MTCountry(props) {
   return (
     <div>
       <select
+        onChange={handleChange}
+        defaultValue={"DEFAULT"}
         className={diasabled ? " mtInputDisabled " : "mtInput "}
         style={{ width: 400, height: 64 }}
-        name="pets"
+        name="country"
         id="pet-select"
       >
-        <option value="">Pays</option>
+        <option value="DEFAULT">France</option>
         {countriesList.map((option, index) => (
-          <option value={option.code} selected={option.selected}>
+          <option value={option.code} defaultValue={"FR"}>
             {option.label}
           </option>
         ))}

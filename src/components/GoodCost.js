@@ -15,7 +15,7 @@ const GoodCost = props => {
   const [total, setTotal] = useState(0);
 
   const formatedNumber = num => {
-    return num; //.toLocaleString();
+    return num;
   };
 
   useEffect(() => {

@@ -6,20 +6,22 @@ import "./style.css";
 
 const ContactDetails = props => {
   const { checkFormValide } = props;
+  const { devis, setDevis } = props.context.context;
 
   const [mail, setMail] = useState("");
-
   const [formeValide, setFormeValide] = useState(false);
   const [eMailValide, setEMailValide] = useState(false);
   const [okMail, setOkMail] = useState(false);
 
   useEffect(() => {
     setFormeValide(okMail && eMailValide);
-    checkFormValide(okMail);
+    setDevis({ ...devis, ["email"]: mail });
   }, [okMail, eMailValide, mail]);
 
   const onChange = e => {
     setMail(e.target.value);
+
+    console.log(devis);
   };
 
   function handleChange(e) {}

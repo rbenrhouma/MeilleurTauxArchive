@@ -54,26 +54,3 @@ export default function MTPostalCode(props) {
     </>
   );
 }
-
-{
-  /* <Autocomplete
-        options={postalCodes.map(
-          option => option.code + " ( " + option.city + " )"
-        )}
-        inputValue={input}
-        onChange={(e, v) => {
-          setInput(v);
-        }}
-        onInputChange={fetchPostalCode}
-        style={{ width: 400, marginTop: 20 }}
-        renderInput={params => (
-          <TextField
-            {...params}
-            label="Code postal"
-            onChange={({ target }) => setInput(target.value)}
-            variant="outlined"
-            fullWidth
-          />
-        )}
-      /> */
-}
