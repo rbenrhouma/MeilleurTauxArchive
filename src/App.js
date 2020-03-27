@@ -11,16 +11,16 @@ import "./App.css";
 import PagesPaths from "./constantes/PagesPaths";
 
 // -------------------------------- Import des pages -------------------------------------
-import ScreenTypeBien from "./screens/01-ScreenTypeBien";
-import ScreenEtatBien from "./screens/02-ScreenEtatBien";
-import ScreenUsageBien from "./screens/03-ScreenUsageBien";
-import ScreenSituationUser from "./screens/04-ScreenSituationUser";
-import ScreenLocalisationBien from "./screens/05-ScreenLocalisationBien";
-import ScreenBudgetBien from "./screens/06-ScreenBudgetBien";
-import ScreenCoordonneesUser from "./screens/07-ScreenCoordonneesUser";
-import ScreenFin from "./screens/08-ScreenFin";
-import ScreenBackOffice from "./screens/99-ScreenBackOffice";
-import ScreenBackOfficeDetails from "./screens/991-ScreenBackOfficeDetail";
+import ScreenTypeBien from "./screens/ScreenTypeBien";
+import ScreenEtatBien from "./screens/ScreenEtatBien";
+import ScreenUsageBien from "./screens/ScreenUsageBien";
+import ScreenSituationUser from "./screens/ScreenSituationUser";
+import ScreenLocalisationBien from "./screens/ScreenLocalisationBien";
+import ScreenBudgetBien from "./screens/ScreenBudgetBien";
+import ScreenCoordonneesUser from "./screens/ScreenCoordonneesUser";
+import ScreenFin from "./screens/ScreenFin";
+import ScreenBackOffice from "./screens/ScreenBackOffice";
+import ScreenBackOfficeDetails from "./screens/ScreenBackOfficeDetail";
 
 export default function App() {
   const [pageIndex, setPageIndex] = useState(Cookies.get("pageIndex") || 1);
