@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 
 const Header = props => {
   const { pageIndex } = props.context;
   const [showButtonBackOffice, setShowButtonBackOffice] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {}, [showButtonBackOffice]);
 
@@ -13,6 +15,8 @@ const Header = props => {
     // provisoire
     Cookies.set("devis", null);
     Cookies.set("pageIndex", 1);
+
+    history.push("/backoffice");
   };
 
   const onIconeClick = () => {

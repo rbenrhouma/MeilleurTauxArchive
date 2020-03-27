@@ -3,7 +3,6 @@ import MTInputBar from "./MT/MTInputBar";
 import "./style.css";
 
 const GoodLocalisation = props => {
-  console.log(props.context.context);
   const { context } = props.context;
   const [country, setCountry] = useState("FR");
   const [postalCode, setPostalCode] = useState("");

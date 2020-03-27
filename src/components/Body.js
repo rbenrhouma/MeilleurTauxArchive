@@ -25,10 +25,7 @@ const Body = props => {
           <ContactDetails checkFormValide={checkFormValide} context={props} />
         )}
         {pageIndex === 8 && (
-          <TheEnd
-            style={{ heignt: 100, color: "red" }}
-            numDossier={"00000000000000"}
-          />
+          <TheEnd numDossier={"00000000000000"} context={props} />
         )}
       </div>
     </>

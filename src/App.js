@@ -59,6 +59,7 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
+              serverURL={serverURL}
             />
           </Route>
           {/* Page 2 */}
@@ -70,6 +71,7 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
+              serverURL={serverURL}
             />
           </Route>
           {/* Page 3 */}
@@ -81,6 +83,7 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
+              serverURL={serverURL}
             />
           </Route>
           {/* Page 4  */}
@@ -92,6 +95,7 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
+              serverURL={serverURL}
             />
           </Route>
           {/* Page 5  */}
@@ -103,6 +107,7 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
+              serverURL={serverURL}
             />
           </Route>
           {/* Page 6 */}
@@ -114,6 +119,7 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
+              serverURL={serverURL}
             />
           </Route>
           {/* Page 7  */}
@@ -125,6 +131,7 @@ export default function App() {
               priorPath={priorPath}
               devis={devis}
               setDevis={setDevis}
+              serverURL={serverURL}
             />
           </Route>
           {/* Page 8 The end */}
