@@ -23,7 +23,7 @@ import ScreenBackOffice from "./screens/ScreenBackOffice";
 import ScreenBackOfficeDetails from "./screens/ScreenBackOfficeDetail";
 
 export default function App() {
-  const [pageIndex, setPageIndex] = useState(Cookies.get("pageIndex") || 1);
+  const [pageIndex, setPageIndex] = useState(Cookies.get("route") || "/");
   const [devis, setDevis] = useState(Cookies.getJSON("devis") || {});
   const [currentPath, setCurrentPath] = useState("/");
 
@@ -35,11 +35,11 @@ export default function App() {
   }, [devis]);
 
   useEffect(() => {
-    Cookies.set("pageIndex", pageIndex);
+    Cookies.set("route", currentPath);
     setCurrentPath(PagesPaths[pageIndex]);
     setNextPath(PagesPaths[Number(pageIndex) + 1]);
     setPriorPath(PagesPaths[Number(pageIndex) - 1]);
-  }, [pageIndex]);
+  }, [currentPath]);
 
   return (
     <Router>

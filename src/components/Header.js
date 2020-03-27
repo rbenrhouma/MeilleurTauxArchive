@@ -13,7 +13,7 @@ const Header = props => {
     console.log("Lance back office");
     // provisoire
     Cookies.set("devis", null);
-    Cookies.set("pageIndex", 1);
+    Cookies.set("route", "/");
 
     history.push("/backoffice");
   };

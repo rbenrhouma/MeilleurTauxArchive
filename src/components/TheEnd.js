@@ -48,8 +48,8 @@ const TheEnd = props => {
         });
         setDevierNum(response.data.numDevis);
 
-        Cookies.remove("project");
-        Cookies.remove("step");
+        Cookies.remove("devis");
+        Cookies.remove("route");
         setDevis({});
       } catch (err) {
         alert(err.message);
