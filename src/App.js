@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import MentionsLegales from "./components/MentionsLegales";
 import {
   BrowserRouter as Router,
   Switch,

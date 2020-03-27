@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
+import MentionsLegales from "./MentionsLegales";
 import "./style.css";
 const Footer = props => {
   const history = useHistory();
@@ -36,7 +37,7 @@ const Footer = props => {
   };
 
   return (
-    <>
+    <div>
       <div className="pagination" id="btn_form">
         <div className="btnContainer">
           {pageIndex > 1 && pageIndex < maxPage && (
@@ -61,7 +62,8 @@ const Footer = props => {
           )}
         </div>
       </div>
-    </>
+      <MentionsLegales context={props.context} />
+    </div>
   );
 };
 export default Footer;

@@ -16,11 +16,11 @@ const ProgressBar = props => {
     <>
       <div ref={ref} className="progress-bar">
         <div className="pourcent_bar" style={{ width: pourcentage + "%" }}>
-          {position > 0 && (
+          {
             <span className="pourcent" style={{ left: position + "px" }}>
               {pourcentage}%
             </span>
-          )}
+          }
         </div>
       </div>
     </>

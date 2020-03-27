@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 import logo from "../assets/logo.jpg";
 
 const Header = props => {
-  const { pageIndex } = props;
+  const { pageIndex } = props.context;
   const [showButtonBackOffice, setShowButtonBackOffice] = useState(false);
 
   useEffect(() => {}, [showButtonBackOffice]);
 
   const onClick = () => {
     console.log("Lance back office");
+    // provisoire
+    Cookies.set("devis", null);
+    Cookies.set("pageIndex", 1);
   };
 
   const onIconeClick = () => {
-    if (pageIndex === 8) setShowButtonBackOffice(!showButtonBackOffice);
+    if (pageIndex == 8) {
+      setShowButtonBackOffice(!showButtonBackOffice);
+    }
   };
 
   return (

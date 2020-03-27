@@ -3,6 +3,7 @@ import "./style.css";
 
 const MentionsLegales = props => {
   const [showText, setShowText] = useState(false);
+  const { pageIndex } = props.context;
   const onMentionsLegalClick = () => {
     setShowText(!showText);
   };
@@ -10,7 +11,7 @@ const MentionsLegales = props => {
     <div>
       <a onClick={onMentionsLegalClick}>
         <div className="mentionsLegalesTitle">
-          <span className={props.pageInex < 8 ? "" : "noneElement"}>
+          <span className={pageIndex < 8 ? "" : "noneElement"}>
             * Champ obligatoire -
           </span>
           <span className="mentionsLegales">Mentions Légales</span>
