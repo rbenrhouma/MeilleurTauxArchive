@@ -6,8 +6,8 @@
 }
 
 .mtInputBar {
-  height: 78px;
-  margin: 10px;
+  height: 70px;
+  margin: 5px;
   display: flex;
   flex-direction: row;
 }
