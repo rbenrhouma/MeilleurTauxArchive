@@ -5,13 +5,12 @@ import "./style.css";
 const GoodLocalisation = props => {
   const { context } = props.context;
   const [country, setCountry] = useState("FR");
-  const [postalCode, setPostalCode] = useState("");
+  const [zipCode, setZipCode] = useState("");
 
-  useEffect(() => {}, [country, postalCode]);
+  useEffect(() => {}, [country, zipCode]);
 
-  const handleChange = e => {
-    if (e.target) console.log(e.target);
-  };
+  const handleChange = e => {};
+
   return (
     <div className="">
       <MTInputBar
@@ -26,12 +25,12 @@ const GoodLocalisation = props => {
         txtInfo={"bla bla bla 11111111..."}
       />
       <MTInputBar
-        name={"postalCode"}
+        name={"zipCode"}
         handleChange={handleChange}
         context={props.context}
-        value={postalCode}
+        value={zipCode}
         type={"text"}
-        type2={"postalCode"}
+        type2={"zipCode"}
         odd={true}
         caption={"Ville ou code postal *"}
         txtInfo={"bla bla bla 11111111..."}

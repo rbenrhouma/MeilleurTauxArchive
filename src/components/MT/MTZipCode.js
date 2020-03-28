@@ -2,34 +2,36 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MTInput from "./MTInput";
 
-export default function MTPostalCode(props) {
+export default function MTZipCode(props) {
   const { name, handleChange, value, type, diasabled } = props;
+  const { devis } = props.context.context;
+  console.log(devis);
+  const [zipCode, setZipCode] = useState("");
+  const [zipCodes, setZipCodes] = useState([]);
 
-  const [postalCode, setPostalCode] = useState("");
-  const [postalCodes, setPostalCodes] = useState([]);
-
-  useEffect(() => {}, [postalCodes]);
+  useEffect(() => {}, [zipCodes]);
 
   const localHandleChange = e => {
-    setPostalCode(e.target.value);
+    setZipCode(e.target.value);
   };
 
   useEffect(() => {
-    fetchPostalCode(postalCode);
-  }, [postalCode]);
+    fetchZipCode(zipCode);
+    if (devis) devis.zipCode = zipCode;
+  }, [zipCode]);
 
-  const fetchPostalCode = async e => {
-    if (e) {
+  const fetchZipCode = async e => {
+    if (zipCode) {
       const response = await axios
-        .get(`https://vicopo.selfbuild.fr/cherche/${postalCode}`)
+        .get(`https://vicopo.selfbuild.fr/cherche/${zipCode}`)
         .then(response => {
-          setPostalCodes(response.data.cities);
+          setZipCodes(response.data.cities);
         })
         .catch(err => {
           console.log(err);
         });
     } else {
-      setPostalCodes([]);
+      setZipCodes([]);
     }
   };
 
@@ -43,11 +45,11 @@ export default function MTPostalCode(props) {
         type={type}
         name={name}
         onChange={localHandleChange}
-        value={postalCode}
+        value={zipCode}
         list="browsers"
       />
       <datalist id="browsers">
-        {postalCodes.map(option => (
+        {zipCodes.map(option => (
           <option value={option.code + " ( " + option.city + " )"} />
         ))}
       </datalist>

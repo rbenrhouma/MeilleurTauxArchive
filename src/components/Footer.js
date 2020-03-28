@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import MentionsLegales from "./MentionsLegales";
@@ -6,10 +6,8 @@ import "./style.css";
 const Footer = props => {
   const history = useHistory();
   const { pageIndex, setPageIndex, nextPath, priorPath } = props.context;
-
+  const [isFormValide, setIsFormValide] = useState(true);
   const maxPage = 8;
-
-  const currentFormIsValid = true;
 
   const onPriorPage = () => {
     if (priorPath) {
@@ -22,7 +20,7 @@ const Footer = props => {
   };
 
   const onNextPage = () => {
-    if (nextPath) {
+    if (nextPath && isFormValide === true) {
       history.push(nextPath);
       setPageIndex(Number(pageIndex) + 1);
     } else {
@@ -49,12 +47,7 @@ const Footer = props => {
         {pageIndex < maxPage && <ProgressBar pourcentage={progression()} />}
         <div className="btnContainer">
           {pageIndex < maxPage && (
-            <a
-              className={
-                currentFormIsValid ? "next btNext" : "next btNextDisabled"
-              }
-              onClick={onNextPage}
-            >
+            <a className={"next btNext"} onClick={onNextPage}>
               <span className="btnContainerText">
                 {pageIndex === maxPage - 1 ? "VALIDER" : "SUIVANT"}
               </span>

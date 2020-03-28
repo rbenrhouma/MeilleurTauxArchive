@@ -11,11 +11,17 @@ const Header = props => {
 
   const onClick = () => {
     console.log("Lance back office");
-    // provisoire
-    Cookies.set("devis", null);
-    Cookies.set("route", "/");
+    // // provisoire
 
-    history.push("/backoffice");
+    Cookies.remove("devis");
+    Cookies.remove("route");
+    Cookies.remove("page");
+
+    // Cookies.set("devis", "xxxx");
+    // Cookies.remove("route", "xxxx");
+    // Cookies.remove("page", "xxxx");
+
+    //history.push("/backoffice");
   };
 
   return (

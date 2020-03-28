@@ -15,13 +15,11 @@ const ContactDetails = props => {
 
   useEffect(() => {
     setFormeValide(okMail && eMailValide);
-    setDevis({ ...devis, ["email"]: mail });
+    devis.email = mail;
   }, [okMail, eMailValide, mail]);
 
   const onChange = e => {
     setMail(e.target.value);
-
-    console.log(devis);
   };
 
   function handleChange(e) {}

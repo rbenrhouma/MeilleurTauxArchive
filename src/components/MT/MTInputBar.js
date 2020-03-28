@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import ReactTooltip from "react-tooltip";
 import MTInput from "./MTInput";
-import MTPostalCode from "./MTPostalCode";
+import MTZipCode from "./MTZipCode";
 import MTCountry from "./MTCountry";
 import "./MtComponentsStyles.css";
 import infoIco from "../../assets/infoIcone.png";
 
 const MTInputBar = props => {
-
   const {
     name,
     caption,
@@ -20,6 +19,7 @@ const MTInputBar = props => {
     icone,
     diasabled
   } = props;
+
 
   return (
     <div className={odd === true ? "mtInputBar mtInputBarOdd" : "mtInputBar"}>
@@ -44,12 +44,13 @@ const MTInputBar = props => {
           diasabled={diasabled ? diasabled : null}
         />
       )}
-      {type2 === "postalCode" && (
-        <MTPostalCode
+      {type2 === "zipCode" && (
+        <MTZipCode
           name={name}
           handleChange={handleChange}
           value={value}
           type={type}
+          context={props.context}
           diasabled={diasabled ? diasabled : null}
         />
       )}
@@ -59,6 +60,7 @@ const MTInputBar = props => {
           handleChange={handleChange}
           value={value}
           type={type}
+          context={props.context}
           diasabled={diasabled ? diasabled : null}
         />
       )}

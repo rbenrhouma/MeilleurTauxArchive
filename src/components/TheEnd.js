@@ -8,48 +8,45 @@ import "./style.css";
 // devis.usageBien
 // devis.situationUser
 // devis.country
-// devis.postalCode
+// devis.zipCode
 // devis.montant
 // devis.travaux
 // devis.notaire
 // devis.total
-// devis.mail
+// devis.email
 
 const TheEnd = props => {
   const { devis, setDevis } = props.context.context;
   const [devierNum, setDevierNum] = useState("");
-  //const serverURL ="http://localhost:3000/";
-  const serverURL = "https://meilleurtauxapi.herokuapp.com/";
+  const serverURL = "https://localhost:5000/";
+  //const serverURL = "https://meilleurtauxapi.herokuapp.com/";
+
+  Cookies.remove("devis");
+  Cookies.remove("route");
+  Cookies.remove("page");
+
+  console.log(devis);
   const saveData = async () => {
     if (
-      devis.goodType &&
-      devis.goodCondition &&
-      devis.goodUsage &&
-      devis.userSituation &&
-      devis.goodLocation &&
+      devis.typeBien &&
+      devis.usageBien &&
       devis.email &&
-      devis.goodPrice !== undefined &&
-      devis.buildingCosts !== undefined &&
-      devis.charges !== undefined &&
       devis.total !== undefined
     ) {
       try {
         const response = await axios.post(serverURL + "devis/save", {
-          goodType: devis.goodType,
-          goodCondition: devis.goodCondition,
-          goodUsage: devis.goodUsage,
-          userSituation: devis.userSituation,
-          city: devis.goodLocation,
+          goodType: devis.typeBien,
+          usageBien: devis.usageBien,
           email: devis.email,
-          goodPrice: devis.goodPrice,
-          buildingCosts: devis.buildingCosts,
-          charges: devis.charges,
           total: devis.total
         });
         setDevierNum(response.data.numDevis);
+        console.log("3");
+        console.log(response.data.numDevis);
 
         Cookies.remove("devis");
         Cookies.remove("route");
+        Cookies.remove("page");
         setDevis({});
       } catch (err) {
         alert(err.message);

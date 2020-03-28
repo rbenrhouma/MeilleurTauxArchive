@@ -39,7 +39,6 @@ export default function App() {
     setNextPath(PagesPaths[Number(pageIndex) + 1]);
     setPriorPath(PagesPaths[Number(pageIndex) - 1]);
     Cookies.set("route", currentPath);
-    console.log(pageIndex);
     if (pageIndex > 0) Cookies.set("page", pageIndex);
     else Cookies.set("page", 1);
   }, [pageIndex]);
