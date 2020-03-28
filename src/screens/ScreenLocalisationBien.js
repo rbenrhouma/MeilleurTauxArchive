@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React  from "react";
 import Header from "../components/Header";
 
 import Footer from "../components/Footer";
@@ -9,11 +9,9 @@ import RadioGroup from "../components/MT/RadioGroup";
 
 import GoodLocalisation from "../components/GoodLocalisation";
 
-
 const ScreenLocalisationBien = props => {
-  const { pageIndex, title, checkFormValide } = props;
+  const { pageIndex, } = props;
   const data = DataPages[pageIndex - 1];
-  console.log("--------------  ScreenLocalisationBien ------------------");
   console.log(pageIndex);
   return (
     <>

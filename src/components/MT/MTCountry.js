@@ -2,7 +2,7 @@ import React from "react";
 import countriesList from "../../constantes/CountryData";
 
 export default function MTCountry(props) {
-  const { name, handleChange, value, type, diasabled } = props;
+  const {  handleChange,  diasabled } = props;
 
   return (
     <div>

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import ReactTooltip from "react-tooltip";
+import React from "react";
 import "./MtComponentsStyles.css";
 
 const MTInput = props => {

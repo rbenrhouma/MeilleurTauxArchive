@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MTInput from "./MTInput";
 
 export default function MTZipCode(props) {
   const { name, handleChange, value, type, diasabled } = props;

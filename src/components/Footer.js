@@ -23,6 +23,7 @@ const Footer = props => {
     if (nextPath && isFormValide === true) {
       history.push(nextPath);
       setPageIndex(Number(pageIndex) + 1);
+      //setIsFormValide(false);
     } else {
       alert("Veuillez remplir les champs obligatoires");
       console.log(props);

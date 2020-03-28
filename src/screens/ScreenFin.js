@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../components/Header";
 
 import Footer from "../components/Footer";
@@ -9,7 +9,7 @@ import Title from "../components/Title";
 import TheEnd from "../components/TheEnd";
 
 const ScreenFin = props => {
-  const { pageIndex, title, checkFormValide } = props;
+  const { pageIndex, } = props;
   const data = DataPages[pageIndex - 1];
 
   console.log("--------------  ScreenFin ------------------");

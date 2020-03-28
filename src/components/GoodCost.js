@@ -14,7 +14,7 @@ const GoodCost = props => {
   const [travaux, setTravaux] = useState(0);
   const [notaire, setNotaire] = useState(0);
   const [total, setTotal] = useState(0);
-  const [newGood, setNewGood] = useState(devis.etatBien === 2);
+  const newGood = devis.etatBien === 2;
 
   const formatedNumber = num => {
     return num;

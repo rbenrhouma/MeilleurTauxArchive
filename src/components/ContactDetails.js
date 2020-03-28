@@ -5,7 +5,6 @@ import conf from "../assets/confidentiel.png";
 import "./style.css";
 
 const ContactDetails = props => {
-  const { checkFormValide } = props;
   const { devis, setDevis } = props.context;
 
   const [mail, setMail] = useState("");

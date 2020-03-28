@@ -7,7 +7,7 @@ const RadioGroup = props => {
   const field = props.InterfaceData[0].field;
 
   const { InterfaceData } = props;
-  const { setDevis, devis } = props.context;
+  const {  devis } = props.context;
   const [selectedText, setSelectedText] = useState("");
   const [selectedItem, setSelectedItem] = useState(() => {
     return -1;

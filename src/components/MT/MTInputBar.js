@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactTooltip from "react-tooltip";
 import MTInput from "./MTInput";
 import MTZipCode from "./MTZipCode";
@@ -28,14 +28,14 @@ const MTInputBar = props => {
       <div
         data-tip={txtInfo}
         className={
-          txtInfo && txtInfo != "" ? "mtInfo  " : "mtInfo hideElement "
+          txtInfo && txtInfo !== "" ? "mtInfo  " : "mtInfo hideElement "
         }
       >
         <ReactTooltip multiline={true} />
         <img src={infoIco} alt={"I"} />
       </div>
 
-      {type2 == undefined && (
+      {type2 === undefined && (
         <MTInput
           name={name}
           handleChange={handleChange}

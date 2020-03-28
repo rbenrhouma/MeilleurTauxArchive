@@ -10,7 +10,7 @@ const Title = props => {
       <div className="title">{props.title}</div>{" "}
       <div
         data-tip={txtInfo}
-        className={txtInfo.trim() != "" ? "mtInfo  " : "mtInfo hideElement "}
+        className={txtInfo.trim() !== "" ? "mtInfo  " : "mtInfo hideElement "}
       >
         <ReactTooltip multiline={true} />
         <img src={infoIco} alt={"I"} />

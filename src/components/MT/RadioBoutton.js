@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "../style.css";
 
 const RadioBoutton = props => {
-  const { index, selectedItem, onSelect, caption, groupField, devis } = props;
+  const { index, selectedItem, onSelect, devis } = props;
   const btnChecked = index === selectedItem;
 
   return (

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Cookies from "js-cookie";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 
 const Header = props => {
   const { pageIndex } = props.context;
-  const history = useHistory();
+  //const history = useHistory();
 
   useEffect(() => {}, []);
 
