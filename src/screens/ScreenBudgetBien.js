@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import DataPages from "../constantes/InterfaceData";
 import Title from "../components/Title";
 import RadioGroup from "../components/MT/RadioGroup";
-
 import MTInputBar from "../components/MT/MTInputBar";
 
 const Fmontant = "montant";
