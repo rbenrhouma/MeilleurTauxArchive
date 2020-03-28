@@ -40,11 +40,13 @@ const ScreenBackOffice = ({ serverURL }) => {
                 history.push(`/devis/${devis._id}`);
               }}
             >
-              <span>code postal : {devis.city}</span>
-              <span>E-mail : {devis.mail}</span>
-              <span>Type du bien : {devis.goodType}</span>
-              <span>Etat du bien : {devis.goodCondition}</span>
-              <span>Montant total : {devis.total}</span>
+              <span>Devis Number : {devis.numDevis}</span>
+              <span>Type : {devis.typeBien}</span>
+              <span>Ville : {devis.zipCode}</span>
+              <span>E-mail : {devis.email}</span>
+              <span>Prix acquisition : {devis.montant}</span>
+              <span>Frais notaire : {devis.notaire}</span>
+              <span>Prix total : {devis.total}</span>
             </div>
             <span
               style={{ marginLeft: "20px" }}

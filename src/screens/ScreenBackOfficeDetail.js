@@ -13,16 +13,12 @@ const ScreenBackOfficeDetail = ({ serverURL }) => {
     const createData = devis => {
       return (
         <div>
-          <p>Tracking Number : {devis.tracking}</p>
-          <p>Type : {devis.goodType}</p>
-          <p>Condition : {devis.goodCondition}</p>
-          <p>Utilisation : {devis.goodUsage}</p>
-          <p>Situation : {devis.userSituation}</p>
-          <p>Ville : {devis.city}</p>
+          <p>Devis Number : {devis.numDevis}</p>
+          <p>Type : {devis.typeBien}</p>
+          <p>Ville : {devis.zipCode}</p>
           <p>E-mail : {devis.email}</p>
-          <p>Prix acquisition : {devis.goodPrice}</p>
-          <p>Prix travaux : {devis.buildingCosts}</p>
-          <p>Frais notaire : {devis.charges}</p>
+          <p>Prix acquisition : {devis.montant}</p>
+          <p>Frais notaire : {devis.notaire}</p>
           <p>Prix total : {devis.total}</p>
         </div>
       );

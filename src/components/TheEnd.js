@@ -16,7 +16,7 @@ import "./style.css";
 // devis.email
 
 const TheEnd = props => {
-  const { devis, setDevis } = props.context.context;
+  const { devis, setDevis } = props.context;
   const [devierNum, setDevierNum] = useState("");
   const serverURL = "https://localhost:5000/";
   //const serverURL = "https://meilleurtauxapi.herokuapp.com/";
@@ -25,7 +25,6 @@ const TheEnd = props => {
   Cookies.remove("route");
   Cookies.remove("page");
 
-  console.log(devis);
   const saveData = async () => {
     if (
       devis.typeBien &&
@@ -41,8 +40,6 @@ const TheEnd = props => {
           total: devis.total
         });
         setDevierNum(response.data.numDevis);
-        console.log("3");
-        console.log(response.data.numDevis);
 
         Cookies.remove("devis");
         Cookies.remove("route");

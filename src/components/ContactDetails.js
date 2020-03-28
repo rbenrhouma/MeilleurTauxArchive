@@ -6,7 +6,7 @@ import "./style.css";
 
 const ContactDetails = props => {
   const { checkFormValide } = props;
-  const { devis, setDevis } = props.context.context;
+  const { devis, setDevis } = props.context;
 
   const [mail, setMail] = useState("");
   const [formeValide, setFormeValide] = useState(false);

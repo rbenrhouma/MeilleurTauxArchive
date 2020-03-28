@@ -20,7 +20,7 @@ import ScreenBudgetBien from "./screens/ScreenBudgetBien";
 import ScreenCoordonneesUser from "./screens/ScreenCoordonneesUser";
 import ScreenFin from "./screens/ScreenFin";
 import ScreenBackOffice from "./screens/ScreenBackOffice";
-import ScreenBackOfficeDetails from "./screens/ScreenBackOfficeDetail";
+import ScreenBackOfficeDetail from "./screens/ScreenBackOfficeDetail";
 
 export default function App() {
   const [pageIndex, setPageIndex] = useState(Cookies.get("page") || 1);
@@ -146,7 +146,7 @@ export default function App() {
 
           {/* Page 10 : Détails */}
           <Route path="/details/:id">
-            <ScreenBackOfficeDetails />
+            <ScreenBackOfficeDetail />
           </Route>
         </Switch>
       </div>

@@ -9,7 +9,7 @@ const Fnotaire = "notaire";
 const Ftotal = "total";
 
 const GoodCost = props => {
-  const { devis, setDevis } = props.context.context;
+  const { devis, setDevis } = props.context;
   const [montant, setMontant] = useState(0);
   const [travaux, setTravaux] = useState(0);
   const [notaire, setNotaire] = useState(0);
