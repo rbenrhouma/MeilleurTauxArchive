@@ -7,6 +7,8 @@ import Title from "../components/Title";
 import RadioGroup from "../components/MT/RadioGroup";
 
 const ScreenUsageBien = props => {
+  console.log("ici-UsageBien");
+
   const { pageIndex } = props;
   const data = DataPages[pageIndex - 1];
   return (

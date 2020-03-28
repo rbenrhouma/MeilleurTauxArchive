@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import {
   BrowserRouter as Router,
+  Link,
   Switch,
   Route,
-  Link,
   Redirect
 } from "react-router-dom";
 import "./App.css";
@@ -26,7 +26,6 @@ export default function App() {
   const [pageIndex, setPageIndex] = useState(Cookies.get("page") || 1);
   const [devis, setDevis] = useState(Cookies.getJSON("devis") || {});
   const [currentPath, setCurrentPath] = useState(Cookies.get("route") || "/");
-
   const [nextPath, setNextPath] = useState("/");
   const [priorPath, setPriorPath] = useState("/");
 
@@ -52,14 +51,16 @@ export default function App() {
         <Switch>
           {/* Page 1  */}
           <Route path={PagesPaths[0]}>
-            <ScreenTypeBien
-              pageIndex={pageIndex}
-              setPageIndex={setPageIndex}
-              nextPath={nextPath}
-              priorPath={priorPath}
-              devis={devis}
-              setDevis={setDevis}
-            />
+            <div>
+              <ScreenTypeBien
+                pageIndex={pageIndex}
+                setPageIndex={setPageIndex}
+                nextPath={nextPath}
+                priorPath={priorPath}
+                devis={devis}
+                setDevis={setDevis}
+              />
+            </div>
           </Route>
           {/* Page 2 */}
           <Route path={PagesPaths[1]}>
@@ -138,12 +139,10 @@ export default function App() {
               setDevis={setDevis}
             />
           </Route>
-
           {/* Page 9 : BackOffice */}
           <Route path={PagesPaths[8]}>
             <ScreenBackOffice />
           </Route>
-
           {/* Page 10 : Détails */}
           <Route path="/details/:id">
             <ScreenBackOfficeDetail />

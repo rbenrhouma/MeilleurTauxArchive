@@ -8,7 +8,9 @@ import MTInputBar from "../components/MT/MTInputBar";
 import conf from "../assets/confidentiel.png";
 
 const ScreenCoordonneesUser = props => {
-  const { pageIndex, title, checkFormValide } = props;
+    console.log("ici_COORD");
+
+  const { pageIndex } = props;
   const data = DataPages[pageIndex - 1];
 
   const { devis, setDevis } = props.context;

@@ -7,7 +7,7 @@ const RadioGroup = props => {
   const field = props.InterfaceData[0].field;
 
   const { InterfaceData } = props;
-  const {  devis } = props.context;
+  const { devis } = props.context;
   const [selectedText, setSelectedText] = useState("");
   const [selectedItem, setSelectedItem] = useState(() => {
     return -1;
@@ -37,26 +37,24 @@ const RadioGroup = props => {
   }, [selectedItem]);
 
   return (
-    <>
-      <div className="radioGroup">
-        {InterfaceData &&
-          InterfaceData.map((radioBtn, index) => {
-            return (
-              index > 0 && (
-                <RadioBoutton
-                  key={index}
-                  index={index}
-                  selectedItem={selectedItem}
-                  groupField={field}
-                  caption={radioBtn.caption}
-                  onSelect={onSelectItem}
-                  devis={devis}
-                ></RadioBoutton>
-              )
-            );
-          })}
-      </div>
-    </>
+    <div className="radioGroup">
+      {InterfaceData &&
+        InterfaceData.map((radioBtn, index) => {
+          return (
+            index > 0 && (
+              <RadioBoutton
+                key={index}
+                index={index}
+                selectedItem={selectedItem}
+                groupField={field}
+                caption={radioBtn.caption}
+                onSelect={onSelectItem}
+                devis={devis}
+              ></RadioBoutton>
+            )
+          );
+        })}
+    </div>
   );
 };
 export default RadioGroup;

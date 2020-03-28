@@ -5,7 +5,7 @@ const ProgressBar = props => {
   const ref = useRef(null);
 
   useEffect(() => {
-    const width = ref.current ? ref.current.offsetWidth : 0;
+   // const width = ref.current ? ref.current.offsetWidth : 0;
   }, [ref.current]);
 
   const progressWidth = ref.current ? ref.current.offsetWidth : 0;

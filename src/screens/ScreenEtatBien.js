@@ -9,6 +9,8 @@ import RadioGroup from "../components/MT/RadioGroup";
 
 
 const ScreenEtatBien = props => {
+    console.log("ici_Etat");
+
   const { pageIndex } = props;
   const data = DataPages[pageIndex - 1];
 

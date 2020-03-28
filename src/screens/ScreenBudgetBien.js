@@ -12,6 +12,7 @@ const Fnotaire = "notaire";
 const Ftotal = "total";
 
 const ScreenBudgetBien = props => {
+  console.log("ici_BIEN");
   const { pageIndex } = props;
   const data = DataPages[pageIndex - 1];
 
@@ -30,7 +31,6 @@ const ScreenBudgetBien = props => {
     if (newGood) setNotaire(formatedNumber((montant * 0.018).toFixed(0)));
     else setNotaire(formatedNumber((montant * 0.0738).toFixed(0)));
     setTotal(formatedNumber(montant * 1 + travaux * 1 + notaire * 1));
-
     setDevis({ ...devis, [Fmontant]: montant });
     setDevis({ ...devis, [Ftravaux]: travaux });
     setDevis({ ...devis, [Fnotaire]: notaire });

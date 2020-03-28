@@ -4,9 +4,6 @@ import "./MtComponentsStyles.css";
 const MTInput = props => {
   const {
     name,
-    caption,
-    odd,
-    txtInfo,
     handleChange,
     value,
     type,

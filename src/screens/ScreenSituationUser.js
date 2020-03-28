@@ -7,6 +7,8 @@ import RadioGroup from "../components/MT/RadioGroup";
 
 
 const ScreenSituationUser = props => {
+    console.log("ici_Situation");
+
   const { pageIndex } = props;
   const data = DataPages[pageIndex - 1];
 

@@ -9,6 +9,8 @@ import RadioGroup from "../components/MT/RadioGroup";
 import MTInputBar from "../components/MT/MTInputBar";
 
 const ScreenLocalisationBien = props => {
+    console.log("ici_Localisation");
+
   const [country, setCountry] = useState("FR");
   const [zipCode, setZipCode] = useState("FR");
   const { pageIndex } = props;
@@ -16,10 +18,10 @@ const ScreenLocalisationBien = props => {
   const handleChange = () => {};
   return (
     <>
-      <Header context={props} />
+      {/* <Header context={props} />
       {data && (
         <Title title={`${data[0].title}  `} txtInfo={`${data[0].info}`}></Title>
-      )}
+      )} */}
       <div className="body" id="body_form">
         <div>
           <MTInputBar

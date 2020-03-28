@@ -6,9 +6,9 @@ import DataPages from "../constantes/InterfaceData";
 import Title from "../components/Title";
 import RadioGroup from "../components/MT/RadioGroup";
 
-
-
 const ScreenTypeBien = props => {
+  console.log("ici-TypeBien");
+
   const { pageIndex } = props;
   const data = DataPages[pageIndex - 1];
 

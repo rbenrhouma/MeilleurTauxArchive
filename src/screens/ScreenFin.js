@@ -21,6 +21,8 @@ import Cookies from "js-cookie";
 // devis.email
 
 const ScreenFin = props => {
+    console.log("ici_FIN");
+
   const { pageIndex } = props;
   const data = DataPages[pageIndex - 1];
 
