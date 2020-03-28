@@ -1,8 +1,6 @@
 import React  from "react";
 import Header from "../components/Header";
-
 import Footer from "../components/Footer";
-
 import DataPages from "../constantes/InterfaceData";
 import Title from "../components/Title";
 import RadioGroup from "../components/MT/RadioGroup";

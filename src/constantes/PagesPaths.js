@@ -5,7 +5,7 @@ export const PagesPaths = [
   "/usagebien",
   "/situationUser",
   "/localisationbien",
-  "/budjetbien",
+  "/budgetbien",
   "/coordonnesuser",
   "/theend",
   "/backoffice",
