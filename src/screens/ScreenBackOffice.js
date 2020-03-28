@@ -37,7 +37,7 @@ const ScreenBackOffice = ({ serverURL }) => {
                 width: "90%"
               }}
               onClick={() => {
-                history.push(`/devis/${devis._id}`);
+                history.push(`/details/${devis._id}`);
               }}
             >
               <span>Devis Number : {devis.numDevis}</span>

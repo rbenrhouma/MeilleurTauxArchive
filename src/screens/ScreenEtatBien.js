@@ -7,8 +7,7 @@ import DataPages from "../constantes/InterfaceData";
 import Title from "../components/Title";
 import RadioGroup from "../components/MT/RadioGroup";
 
-import GoodLocalisation from "../components/GoodLocalisation";
-import GoodCost from "../components/GoodCost";
+
 
 const ScreenEtatBien = props => {
   const { pageIndex } = props;
